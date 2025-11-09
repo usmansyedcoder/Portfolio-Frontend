@@ -1,14 +1,10 @@
 import axios from 'axios';
 
-// Dynamically choose API base URL
+// ✅ FIXED - Use absolute URLs
 const API = axios.create({
-  baseURL:
-    process.env.NODE_ENV === 'production'
-      ? '/api' // ✅ Works on Vercel (same domain)
-      : 'https://portfolio-backend-sage-rho.vercel.app/api/', // ✅ Works locally
+  baseURL: 'https://portfolio-backend-sage-rho.vercel.app/api/',
 });
 
 // API endpoints
 export const fetchProjects = () => API.get('/projects');
-export const fetchProject = (id) => API.get(`/projects/${id}`);
 export const submitContact = (formData) => API.post('/contact', formData);
