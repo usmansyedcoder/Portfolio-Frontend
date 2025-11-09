@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // ✅ FIXED - Use absolute URLs
 const API = axios.create({
-  baseURL: 'https://portfolio-backend-xi-bice.vercel.app/api',
+  baseURL: 'https://portfolio-backend-six-dusky.vercel.app/api',
 });
 
 // API endpoints
