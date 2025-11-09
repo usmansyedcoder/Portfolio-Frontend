@@ -5,7 +5,7 @@ const API = axios.create({
   baseURL:
     process.env.NODE_ENV === 'production'
       ? '/api' // ✅ Works on Vercel (same domain)
-      : 'http://localhost:5000/api', // ✅ Works locally
+      : 'https://portfolio-backend-sage-rho.vercel.app/api/', // ✅ Works locally
 });
 
 // API endpoints
