@@ -1,8 +1,11 @@
 // client/src/api/api.js
 import axios from 'axios';
 
+// Use environment variable or fallback to your deployed backend
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://portfolio-backend-xi-bice.vercel.app';
+
 const API = axios.create({
-  baseURL: 'https://portfolio-backend-xi-bice.vercel.app/api',
+  baseURL: API_BASE_URL,
 });
 
 // Request interceptor
@@ -28,8 +31,8 @@ API.interceptors.response.use(
   }
 );
 
-// API endpoints
-export const fetchProjects = () => API.get('/projects');
-export const submitContact = (formData) => API.post('/contact/send', formData);
+// API endpoints - CORRECTED based on your backend response
+export const fetchProjects = () => API.get('/api/projects');
+export const submitContact = (formData) => API.post('/ppl/contact', formData);
 
 export default API;
