@@ -505,3 +505,272 @@
     gap: 1rem;
   }
 }
+
+
+
+
+/* /////////////////////////////////////////////////////////////////// */
+
+/* Advanced Folder Icon Styles */
+.project-icon-container {
+  position: relative;
+  z-index: 2;
+}
+
+.advanced-folder {
+  position: relative;
+  width: 80px;
+  height: 60px;
+  perspective: 1000px;
+}
+
+.folder-body {
+  position: relative;
+  width: 80px;
+  height: 60px;
+  transform-style: preserve-3d;
+  animation: folderFloat 3s ease-in-out infinite;
+}
+
+.folder-top {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  width: 60px;
+  height: 15px;
+  background: linear-gradient(135deg, #ffd700, #ffed4e);
+  border-radius: 5px 5px 0 0;
+  transform-origin: bottom;
+  animation: folderTop 2s ease-in-out infinite;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+}
+
+.folder-front {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 80px;
+  height: 50px;
+  background: linear-gradient(135deg, #ffed4e, #ffd700);
+  border-radius: 0 8px 8px 8px;
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+}
+
+.folder-line {
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 2px;
+}
+
+.folder-line:nth-child(1) { top: 15px; }
+.folder-line:nth-child(2) { top: 25px; width: 70%; }
+.folder-line:nth-child(3) { top: 35px; width: 60%; }
+
+.folder-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.3) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  animation: glowPulse 2s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes folderFloat {
+  0%, 100% {
+    transform: translateY(0) rotateX(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotateX(5deg);
+  }
+}
+
+@keyframes folderTop {
+  0%, 100% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(-10deg);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+/* Technology Icons */
+.tech-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation: iconFloat 3s ease-in-out infinite;
+}
+
+.tech-icon {
+  width: 50px;
+  height: 50px;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.tech-icon-wrapper.js {
+  background: linear-gradient(135deg, #f7df1e, #d4b830);
+  box-shadow: 0 8px 25px rgba(247, 223, 30, 0.4);
+}
+
+.tech-icon-wrapper.python {
+  background: linear-gradient(135deg, #3776ab, #306998);
+  box-shadow: 0 8px 25px rgba(55, 118, 171, 0.4);
+}
+
+.tech-icon-wrapper.java {
+  background: linear-gradient(135deg, #ed8b00, #d87e00);
+  box-shadow: 0 8px 25px rgba(237, 139, 0, 0.4);
+}
+
+.tech-icon-wrapper.react {
+  background: linear-gradient(135deg, #61dafb, #21a9c7);
+  box-shadow: 0 8px 25px rgba(97, 218, 251, 0.4);
+}
+
+.tech-icon-wrapper.default {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+@keyframes iconFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.05);
+  }
+}
+
+/* Enhanced Project Header */
+.project-header-modern {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-header-modern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+  animation: shine 3s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Enhanced hover effects */
+.project-card-modern:hover .tech-icon-wrapper {
+  animation: iconHover 0.6s ease forwards;
+}
+
+.project-card-modern:hover .advanced-folder .folder-body {
+  animation: folderHover 0.6s ease forwards;
+}
+
+@keyframes iconHover {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes folderHover {
+  0% {
+    transform: translateY(0) rotateX(0deg);
+  }
+  100% {
+    transform: translateY(-5px) rotateX(5deg) scale(1.05);
+  }
+}
+
+/* Responsive adjustments for new icons */
+@media (max-width: 768px) {
+  .tech-icon-wrapper {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .tech-icon {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .advanced-folder {
+    width: 60px;
+    height: 45px;
+  }
+  
+  .folder-front {
+    width: 60px;
+    height: 40px;
+  }
+  
+  .folder-top {
+    width: 45px;
+    height: 12px;
+    left: 7px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tech-icon-wrapper {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .tech-icon {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .advanced-folder {
+    width: 50px;
+    height: 40px;
+  }
+  
+  .folder-front {
+    width: 50px;
+    height: 35px;
+  }
+  
+  .folder-top {
+    width: 40px;
+    height: 10px;
+    left: 5px;
+  }
+}
