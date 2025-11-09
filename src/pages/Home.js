@@ -21,28 +21,28 @@ const Home = () => {
     { name: 'Python', icon: '🐍', color: '#3776AB' },
   ];
 
-  const services = [
-    {
-      icon: '💻',
-      title: 'Web Development',
-      description: 'Building responsive and modern web applications using latest technologies'
-    },
-    {
-      icon: '📱',
-      title: 'Mobile Development',
-      description: 'Creating cross-platform mobile apps with Flutter and React Native'
-    },
-    {
-      icon: '⚙️',
-      title: 'Backend Development',
-      description: 'Developing robust RESTful APIs and server-side applications'
-    },
-    {
-      icon: '🎨',
-      title: 'UI/UX Design',
-      description: 'Designing beautiful and intuitive user interfaces'
-    }
-  ];
+  // const services = [
+  //   {
+  //     icon: '💻',
+  //     title: 'Web Development',
+  //     description: 'Building responsive and modern web applications using latest technologies'
+  //   },
+  //   {
+  //     icon: '📱',
+  //     title: 'Mobile Development',
+  //     description: 'Creating cross-platform mobile apps with Flutter and React Native'
+  //   },
+  //   {
+  //     icon: '⚙️',
+  //     title: 'Backend Development',
+  //     description: 'Developing robust RESTful APIs and server-side applications'
+  //   },
+  //   {
+  //     icon: '🎨',
+  //     title: 'UI/UX Design',
+  //     description: 'Designing beautiful and intuitive user interfaces'
+  //   }
+  // ];
 
   const stats = [
     { number: '50+', label: 'Projects Completed' },
