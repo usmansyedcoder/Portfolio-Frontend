@@ -577,3 +577,190 @@
     font-size: 2rem;
   }
 }
+
+
+
+
+
+/* //////////// */
+
+
+/* ===== ENHANCED RESPONSIVE FIXES ===== */
+
+/* Mobile (max-width: 480px) - Additional fixes */
+@media (max-width: 480px) {
+  .about-hero {
+    min-height: auto;
+    padding: 3rem 1rem 2rem;
+  }
+
+  .about-intro h1 {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+
+  .role {
+    font-size: 1.2rem;
+  }
+
+  .bio {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .about-cta {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.9rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .status-badge {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+  }
+
+  /* Achievements */
+  .achievements-section {
+    padding: 3rem 1rem;
+  }
+
+  .achievements-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .achievement-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .achievement-number {
+    font-size: 2.5rem;
+  }
+
+  /* Skills */
+  .skills-detailed-section {
+    padding: 3rem 1rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .section-header p {
+    font-size: 1rem;
+  }
+
+  .skill-category {
+    padding: 1.5rem;
+  }
+
+  .category-header h3 {
+    font-size: 1.4rem;
+  }
+
+  .skill-name {
+    font-size: 1rem;
+  }
+
+  /* Timeline */
+  .timeline-section {
+    padding: 3rem 1rem;
+  }
+
+  .timeline-item {
+    flex-direction: column;
+    padding-left: 0;
+    gap: 1rem;
+  }
+
+  .timeline-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+    position: relative;
+    left: 0;
+    margin: 0 auto;
+  }
+
+  .timeline-content {
+    padding: 1.5rem;
+  }
+
+  .timeline-content h3 {
+    font-size: 1.4rem;
+  }
+
+  .timeline-content h4 {
+    font-size: 1.1rem;
+  }
+
+  /* CTA Section */
+  .about-cta-section {
+    padding: 4rem 1rem;
+  }
+
+  .about-cta-section .cta-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-cta-section .cta-content p {
+    font-size: 1.1rem;
+  }
+
+  .btn-large {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+/* Extra Small Mobile (max-width: 360px) */
+@media (max-width: 360px) {
+  .about-hero {
+    padding: 2rem 0.8rem 1.5rem;
+  }
+
+  .profile-image-wrapper {
+    width: 220px;
+    height: 220px;
+  }
+
+  .about-intro h1 {
+    font-size: 1.6rem;
+  }
+
+  .role {
+    font-size: 1.1rem;
+  }
+
+  .bio {
+    font-size: 0.9rem;
+  }
+
+  .achievement-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .achievement-number {
+    font-size: 2rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .timeline-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.8rem;
+  }
+
+  .timeline-content h3 {
+    font-size: 1.2rem;
+  }
+}
