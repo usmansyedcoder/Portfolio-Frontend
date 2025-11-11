@@ -136,11 +136,6 @@ const Home = () => {
             </div>
           </div>
         </div>
-
-        {/* Scroll Indicator */}
-        <div className="scroll-indicator">
-          <div className="scroll-arrow"></div>
-        </div>
       </section>
 
       {/* Stats Section */}
