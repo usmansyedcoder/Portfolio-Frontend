@@ -1159,3 +1159,19 @@
     font-size: 16px; /* Prevents iOS zoom */
   }
 }
+
+
+/* ///////// */
+
+/* Ensure full-width form groups span both columns */
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+/* Make sure the form grid has proper spacing */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}

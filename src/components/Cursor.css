@@ -1,0 +1,64 @@
+/* Hide default cursor */
+html, * {
+  cursor: none;
+}
+
+/* Custom cursor styles */
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #000;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.05s ease; /* Faster transition */
+}
+
+.cursor-circle {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: all 0.08s ease-out; /* Faster transition */
+}
+
+/* Hover effects */
+.cursor-circle.hover {
+  width: 60px;
+  height: 60px;
+  border-color: #007bff;
+  border-width: 1px;
+  transition: all 0.1s ease-out; /* Faster hover transition */
+}
+
+.cursor-dot.hover {
+  background-color: #007bff;
+  transform: translate(-50%, -50%) scale(1.5);
+  transition: transform 0.08s ease; /* Faster hover transition */
+}
+
+/* Ensure it works on interactive elements */
+a, button, input, textarea, select {
+  cursor: none !important;
+}
+
+/* Hide cursor on mobile devices */
+@media (max-width: 768px) {
+  .cursor-dot, .cursor-circle {
+    display: none;
+  }
+  
+  html, * {
+    cursor: auto;
+  }
+}

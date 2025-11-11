@@ -7,11 +7,13 @@ import Projects from './pages/Projects';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import './App.css';
+import Cursor from './components/Cursor';
 
 function App() {
   return (
     <Router>
       <div className="App">
+        <Cursor /> 
         <Navbar />
         <main className="main-content">
           <Routes>
