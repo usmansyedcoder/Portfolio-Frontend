@@ -10,17 +10,6 @@ const Home = () => {
     setIsVisible(true);
   }, []);
 
-  const techStack = [
-    { name: 'MongoDB', icon: '🍃', color: '#47A248' },
-    { name: 'Express.js', icon: '⚡', color: '#000000' },
-    { name: 'React', icon: '⚛️', color: '#61DAFB' },
-    { name: 'Node.js', icon: '🟢', color: '#339933' },
-    { name: 'JavaScript', icon: '📜', color: '#F7DF1E' },
-    { name: 'TypeScript', icon: '🔷', color: '#3178C6' },
-    { name: 'Flutter', icon: '📱', color: '#02569B' },
-    { name: 'Python', icon: '🐍', color: '#3776AB' },
-  ];
-
   // const services = [
   //   {
   //     icon: '💻',
@@ -105,34 +94,11 @@ const Home = () => {
           {/* Hero Image Section */}
           <div className="hero-image">
             <div className="image-container">
-              {/* Floating Icons Above Picture */}
-              <div className="top-floating-icons">
-                <div className="floating-code-icon">{"</>"}</div>
-                <div className="floating-bracket-icon">{"{}"}</div>
-                <div className="floating-branch-icon">{"<>"}</div>
-              </div>
-
               <img
                 src={profileImage}
                 alt="Muhammad Usman"
                 className="profile-image"
               />
-
-              {/* Floating Tech Icons */}
-              <div className="floating-tech-icons">
-                {techStack.slice(0, 6).map((tech, index) => (
-                  <div
-                    key={tech.name}
-                    className={`tech-orb tech-orb-${index + 1}`}
-                    style={{ '--tech-color': tech.color }}
-                  >
-                    <div className="tech-orb-content">
-                      <span className="tech-icon">{tech.icon}</span>
-                    </div>
-                    <div className="tech-tooltip">{tech.name}</div>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         </div>
