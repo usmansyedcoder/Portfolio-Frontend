@@ -1667,6 +1667,21 @@
 .vite-card:hover .mern-icon {
   animation: viteSpin 1s ease-in-out;
 }
+.firebase-card:hover .mern-icon {
+  animation: viteSpin 1s ease-in-out;
+}
+.node-card:hover .mern-icon {
+  animation: viteSpin 1s ease-in-out;
+}
+.react-card:hover .mern-icon {
+  animation: viteSpin 1s ease-in-out;
+}
+.express-card:hover .mern-icon {
+  animation: viteSpin 1s ease-in-out;
+}
+.mongo-card:hover .mern-icon {
+  animation: viteSpin 1s ease-in-out;
+}
 
 @keyframes viteSpin {
   0% {
