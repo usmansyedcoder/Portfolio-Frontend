@@ -2,53 +2,73 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+
+    <!-- Google Verification -->
     <meta name="google-site-verification" content="vF0kkm3d50WRgWvPs1XyLUFUTt_NYuHpeK9HYhtmVb4" />
 
-    <link rel="icon" href="%PUBLIC_URL%/favicon.svg" />
+    <!-- Basic Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
+    <meta name="author" content="Muhammad Usman" />
     <meta
       name="description"
-      content="Muhammad Usman - Full Stack MERN Developer Portfolio. Building modern web applications with MongoDB, Express, React, and Node.js"
+      content="Official portfolio of Muhammad Usman, a Full Stack MERN and Flutter Developer. Explore projects, skills, experience, and contact information."
     />
-    <meta name="author" content="Muhammad Usman" />
-    <meta name="keywords" content="Muhammad Usman, Full Stack Developer, MERN Stack, React, Node.js, MongoDB, Portfolio" />
-    
-    <!-- Open Graph / Facebook -->
+    <meta
+      name="keywords"
+      content="Muhammad Usman, Usman Portfolio, Full Stack Developer, MERN Stack Developer, React Developer, Node.js Developer, MongoDB, Flutter Developer, Web Developer Peshawar"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.svg" />
+
+    <!-- Open Graph (Facebook / LinkedIn Preview) -->
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://usmaniaportfolio.vercel.app" />
     <meta property="og:title" content="Muhammad Usman - Full Stack Developer" />
-    <meta property="og:description" content="Full Stack MERN Developer Portfolio" />
-    
-    <!-- Twitter -->
+    <meta
+      property="og:description"
+      content="Full Stack MERN & Flutter Developer Portfolio of Muhammad Usman."
+    />
+    <meta property="og:image" content="/thumbnail.jpg" />
+
+    <!-- Twitter Meta -->
     <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://usmaniaportfolio.vercel.app" />
     <meta property="twitter:title" content="Muhammad Usman - Full Stack Developer" />
-    <meta property="twitter:description" content="Full Stack MERN Developer Portfolio" />
-    
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    
+    <meta
+      property="twitter:description"
+      content="Explore projects and skills of Muhammad Usman, MERN Stack and Flutter Developer."
+    />
+    <meta property="twitter:image" content="/thumbnail.jpg" />
+
+    <!-- Manifest (optional) -->
+    <link rel="manifest" href="/manifest.json" />
+
     <title>Muhammad Usman - Full Stack Developer</title>
   </head>
+
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>You need to enable JavaScript to run this application.</noscript>
     <div id="root"></div>
+
     <script type="text/javascript">
-    (function (l) {
-      if (l.search[1] === "/") {
-        var decoded = l.search
-          .slice(1)
-          .split("&")
-          .map(function (s) {
-            return s.replace(/~and~/g, "&");
-          })
-          .join("?");
-        window.history.replaceState(
-          null,
-          null,
-          l.pathname.slice(0, -1) + decoded + l.hash
-        );
-      }
-    })(window.location);
-  </script>
+      (function (l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(
+            null,
+            null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      })(window.location);
+    </script>
   </body>
 </html>
