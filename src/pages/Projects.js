@@ -44,7 +44,6 @@ const Projects = () => {
   const getProjectIcon = (project, index) => {
     const language = project.language?.toLowerCase();
     
-    // Language-specific icons
     if (language?.includes('javascript') || language?.includes('js')) {
       return (
         <div className="tech-icon-wrapper js">
@@ -80,18 +79,11 @@ const Projects = () => {
         </div>
       );
     } else {
-      // Default animated folder icon with gradient
       return (
-        <div className="advanced-folder">
-          <div className="folder-body">
-            <div className="folder-top"></div>
-            <div className="folder-front">
-              <div className="folder-line"></div>
-              <div className="folder-line"></div>
-              <div className="folder-line"></div>
-            </div>
-          </div>
-          <div className="folder-glow"></div>
+        <div className="tech-icon-wrapper default">
+          <svg className="tech-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z"/>
+          </svg>
         </div>
       );
     }
@@ -175,53 +167,37 @@ const Projects = () => {
               className="project-card-modern"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Project Header with Gradient */}
+              {/* Project Header */}
               <div className={`project-header-modern gradient-${index % 5}`}>
                 <div className="project-icon-container">
                   {getProjectIcon(project, index)}
-                </div>
-                <div className="project-header-overlay">
-                  <div className="project-quick-stats">
-                    <span className="quick-stat">⭐ {project.stars}</span>
-                    <span className="quick-stat">🔱 {project.forks}</span>
-                  </div>
                 </div>
               </div>
               
               {/* Project Body */}
               <div className="project-body-modern">
-                <h3 className="project-title-modern">{project.title}</h3>
-                <p className="project-description-modern">{project.description}</p>
+                <div className="project-header-clean">
+                  <h3 className="project-title-modern">{project.title}</h3>
+                  {project.language && (
+                    <span className="language-badge">{project.language}</span>
+                  )}
+                </div>
+                
+                <p className="project-description-modern">
+                  {project.description || 'No description available'}
+                </p>
                 
                 {/* Technologies */}
                 {project.technologies && project.technologies.length > 0 && (
                   <div className="tech-stack-modern">
-                    {project.technologies.slice(0, 4).map((tech, idx) => (
+                    {project.technologies.slice(0, 3).map((tech, idx) => (
                       <span key={idx} className="tech-badge-modern">{tech}</span>
                     ))}
-                    {project.technologies.length > 4 && (
-                      <span className="tech-badge-modern more">+{project.technologies.length - 4}</span>
+                    {project.technologies.length > 3 && (
+                      <span className="tech-badge-modern more">+{project.technologies.length - 3}</span>
                     )}
                   </div>
                 )}
-                
-                {/* Project Stats */}
-                <div className="project-stats-modern">
-                  {project.language && (
-                    <div className="stat-item">
-                      <span className="stat-icon">💻</span>
-                      <span className="stat-text">{project.language}</span>
-                    </div>
-                  )}
-                  <div className="stat-item">
-                    <span className="stat-icon">⭐</span>
-                    <span className="stat-text">{project.stars} stars</span>
-                  </div>
-                  <div className="stat-item">
-                    <span className="stat-icon">🔱</span>
-                    <span className="stat-text">{project.forks} forks</span>
-                  </div>
-                </div>
                 
                 {/* Action Buttons */}
                 <div className="project-actions-modern">
