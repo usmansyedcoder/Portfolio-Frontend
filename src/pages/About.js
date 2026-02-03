@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './About.css';
 
-
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [activeSkill, setActiveSkill] = useState('all');
 
   useEffect(() => {
     setIsVisible(true);
@@ -11,28 +11,28 @@ const About = () => {
 
   const skills = {
     frontend: [
-      { name: 'React.js', level: 95, icon: '⚛️' },
-      { name: 'JavaScript (ES6+)', level: 92, icon: '📜' },
-      { name: 'HTML5 & CSS3', level: 95, icon: '🎨' },
-      { name: 'Redux', level: 85, icon: '🔄' },
-      { name: 'Tailwind CSS', level: 90, icon: '💨' },
-      { name: 'Bootstrap', level: 88, icon: '🅱️' }
+      { name: 'React.js', level: 95, icon: '⚛️', color: '#61DAFB' },
+      { name: 'JavaScript (ES6+)', level: 92, icon: '📜', color: '#F7DF1E' },
+      { name: 'HTML5 & CSS3', level: 95, icon: '🎨', color: '#E34F26' },
+      { name: 'Redux', level: 85, icon: '🔄', color: '#764ABC' },
+      { name: 'Tailwind CSS', level: 90, icon: '💨', color: '#38B2AC' },
+      { name: 'Bootstrap', level: 88, icon: '🅱️', color: '#7952B3' }
     ],
     backend: [
-      { name: 'Node.js', level: 90, icon: '🟢' },
-      { name: 'Express.js', level: 88, icon: '⚡' },
-      { name: 'MongoDB', level: 90, icon: '🍃' },
-      { name: 'REST APIs', level: 92, icon: '🔌' },
-      { name: 'Authentication', level: 85, icon: '🔐' },
-      { name: 'Socket.io', level: 80, icon: '📡' }
+      { name: 'Node.js', level: 90, icon: '🟢', color: '#339933' },
+      { name: 'Express.js', level: 88, icon: '⚡', color: '#000000' },
+      { name: 'MongoDB', level: 90, icon: '🍃', color: '#47A248' },
+      { name: 'REST APIs', level: 92, icon: '🔌', color: '#FF6B6B' },
+      { name: 'Authentication', level: 85, icon: '🔐', color: '#FFD166' },
+      { name: 'Socket.io', level: 80, icon: '📡', color: '#010101' }
     ],
     tools: [
-      { name: 'Git & GitHub', level: 95, icon: '📦' },
-      { name: 'VS Code', level: 98, icon: '💻' },
-      { name: 'Postman', level: 90, icon: '📬' },
-      { name: 'Docker', level: 75, icon: '🐳' },
-      { name: 'AWS', level: 70, icon: '☁️' },
-      { name: 'Vercel/Netlify', level: 85, icon: '🚀' }
+      { name: 'Git & GitHub', level: 95, icon: '📦', color: '#F05032' },
+      { name: 'VS Code', level: 98, icon: '💻', color: '#007ACC' },
+      { name: 'Postman', level: 90, icon: '📬', color: '#FF6C37' },
+      { name: 'Docker', level: 75, icon: '🐳', color: '#2496ED' },
+      { name: 'AWS', level: 70, icon: '☁️', color: '#FF9900' },
+      { name: 'Vercel/Netlify', level: 85, icon: '🚀', color: '#000000' }
     ]
   };
 
@@ -42,219 +42,279 @@ const About = () => {
       title: 'Full Stack Developer',
       company: 'Freelance',
       description: 'Building modern web applications using MERN stack. Working with clients worldwide to deliver high-quality solutions.',
-      icon: '💼'
+      icon: '💼',
+      type: 'experience'
     },
     {
       year: 'July 2024 - Dec 2024',
       title: 'Web Developer',
-      company: 'Software Synergy Solutions & Club Islamia College Peshawar.',
+      company: 'Software Synergy Solutions & Club Islamia College Peshawar',
       description: 'Developed and maintained multiple web applications. Collaborated with design and backend teams.',
-      icon: '🚀'
+      icon: '🚀',
+      type: 'experience'
     },
     {
       year: '2021 - 2025',
       title: 'Bachelor in Computer Science',
       company: 'Islamia College Peshawar, Pakistan',
       description: 'Focused on software engineering, web development, and database management.',
-      icon: '🎓'
+      icon: '🎓',
+      type: 'education'
     },
     {
       year: '2019 - 2021',
       title: 'Intermediate (F.Sc)',
       company: 'Islamia College Peshawar, Pakistan',
-      description: 'Studied Intermediate with A1 Grade. Marks : 976/1100',
-      icon: '🎓'
+      description: 'Studied Intermediate with A1 Grade. Marks: 976/1100',
+      icon: '🎓',
+      type: 'education'
     },
     {
       year: '2017 - 2019',
       title: 'Matric (Science)',
       company: 'Islamia Collegiate School Peshawar, Pakistan',
-      description: 'Studied Matric (Science) with A1 Grade. Marks 940/1100.',
-      icon: '🎓'
+      description: 'Studied Matric (Science) with A1 Grade. Marks: 940/1100',
+      icon: '🎓',
+      type: 'education'
     }
   ];
 
   const achievements = [
-    { number: '50+', label: 'Projects Completed', icon: '🏆' },
-    { number: '30+', label: 'Happy Clients', icon: '😊' },
-    { number: '3+', label: 'Years Experience', icon: '📅' },
-    { number: '15+', label: 'Technologies', icon: '⚙️' }
+    { number: '50+', label: 'Projects Completed', icon: '🚀', delay: '0.1s' },
+    { number: '30+', label: 'Happy Clients', icon: '😊', delay: '0.2s' },
+    { number: '3+', label: 'Years Experience', icon: '📅', delay: '0.3s' },
+    { number: '15+', label: 'Technologies', icon: '⚡', delay: '0.4s' }
+  ];
+
+  const interests = [
+    { icon: '💻', title: 'Open Source', description: 'Contributing to community projects' },
+    { icon: '📚', title: 'Learning', description: 'Always exploring new tech' },
+    { icon: '🎨', title: 'UI/UX Design', description: 'Creating beautiful interfaces' },
+    { icon: '🚀', title: 'Innovation', description: 'Building future solutions' }
   ];
 
   return (
     <div className={`about ${isVisible ? 'visible' : ''}`}>
-      {/* Hero Section */}
-      <section className="about-hero">
-        <div className="about-hero-content">
-          <div className="profile-section">
-            <div className="profile-image-wrapper">
-              <img
-                src={require('./profile.jpeg')}
-                alt="Muhammad Usman"
-                className="profile-image"
-                onError={(e) => {
-                  e.target.src = 'https://ui-avatars.com/api/?name=Muhammad+Usman&size=400&background=00d4ff&color=fff&bold=true&font-size=0.4';
-                }}
-              />
-              <div className="profile-ring"></div>
-              <div className="profile-ring-2"></div>
-            </div>
-            <div className="status-badge">
-              <span className="status-dot"></span>
-              Available for work
-            </div>
-          </div>
+      {/* Animated Background */}
+      <div className="animated-background"></div>
 
-          <div className="about-intro">
-            <h1>Hi, I'm Muhammad Usman</h1>
-            <p className="role">Full Stack MERN Developer</p>
-            <p className="bio">
-              I'm a passionate developer specializing in creating modern, responsive web applications.
-              With expertise in MongoDB, Express.js, React, and Node.js, I transform ideas into
-              elegant digital solutions that solve real-world problems.
-            </p>
-            <p className="bio">
-              When I'm not coding, you'll find me exploring new technologies, contributing to
-              open-source projects, or sharing knowledge with the developer community.
-            </p>
-            <div className="about-cta">
-              <a href="/Muhammad-Usman-Resume.pdf" download className="btn btn-primary">
-                <span>Download CV</span>
-                <span>📥</span>
-              </a>
-              <a href="/contact" className="btn btn-secondary">
-                <span>Hire Me</span>
-                <span>💼</span>
-              </a>
+      {/* Hero Section */}
+      <section className="hero-section">
+        <div className="container">
+          <div className="hero-content">
+            <div className="profile-container">
+              <div className="profile-wrapper">
+                <div className="profile-gradient">
+                  <img
+                    src={require('./profile.jpeg')}
+                    alt="Muhammad Usman"
+                    className="profile-img"
+                    onError={(e) => {
+                      e.target.src = 'https://ui-avatars.com/api/?name=Muhammad+Usman&size=400&background=00d4ff&color=fff&bold=true&font-size=0.4';
+                    }}
+                  />
+                </div>
+                <div className="profile-badge">
+                  <div className="badge-dot"></div>
+                  <span>Available for work</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="hero-text">
+              <div className="text-wrapper">
+                <h4 className="greeting">Hello, I'm</h4>
+                <h1 className="name">Muhammad <span>Usman</span></h1>
+                <div className="typewriter">
+                  <span className="role">Full Stack MERN Developer</span>
+                </div>
+                <p className="bio">
+                  I transform complex problems into simple, beautiful, and intuitive designs.
+                  With 3+ years of experience in MERN stack development, I create scalable
+                  web applications that deliver exceptional user experiences.
+                </p>
+                <div className="hero-actions">
+                  <a href="/Muhammad-Usman-Resume.pdf" download className="btn btn-primary">
+                    <span>Download CV</span>
+                    <span className="icon">📥</span>
+                  </a>
+                  <a href="/contact" className="btn btn-outline">
+                    <span>Let's Connect</span>
+                    <span className="icon">👋</span>
+                  </a>
+                </div>
+                <div className="social-links">
+                  <a href="https://github.com" target="_blank" rel="noreferrer">GitHub</a>
+                  <a href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+                  <a href="https://twitter.com" target="_blank" rel="noreferrer">Twitter</a>
+                  <a href="mailto:your.email@example.com">Email</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Achievements Section */}
-      <section className="achievements-section">
-        <div className="achievements-grid">
-          {achievements.map((achievement, index) => (
-            <div key={index} className="achievement-card" style={{ animationDelay: `${index * 0.1}s` }}>
-              <div className="achievement-icon">{achievement.icon}</div>
-              <h3 className="achievement-number">{achievement.number}</h3>
-              <p className="achievement-label">{achievement.label}</p>
-            </div>
-          ))}
+      {/* Stats Section */}
+      <section className="stats-section">
+        <div className="container">
+          <div className="stats-grid">
+            {achievements.map((item, index) => (
+              <div key={index} className="stat-card" style={{ animationDelay: item.delay }}>
+                <div className="stat-icon">{item.icon}</div>
+                <h3 className="stat-number">{item.number}</h3>
+                <p className="stat-label">{item.label}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Skills Section */}
-      <section className="skills-detailed-section">
-        <div className="section-header">
-          <h2>Technical Skills</h2>
-          <p>Technologies and tools I work with</p>
-        </div>
-
-        <div className="skills-categories">
-          <div className="skill-category">
-            <div className="category-header">
-              <h3>🎨 Frontend Development</h3>
-            </div>
-            <div className="skills-list">
-              {skills.frontend.map((skill, index) => (
-                <div key={index} className="skill-item" style={{ animationDelay: `${index * 0.05}s` }}>
-                  <div className="skill-info">
-                    <span className="skill-icon">{skill.icon}</span>
-                    <span className="skill-name">{skill.name}</span>
-                    <span className="skill-percent">{skill.level}%</span>
-                  </div>
-                  <div className="skill-bar-container">
-                    <div
-                      className="skill-bar-fill"
-                      style={{ width: `${skill.level}%` }}
-                    ></div>
-                  </div>
-                </div>
-              ))}
-            </div>
+      <section className="skills-section">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title">Technical Expertise</h2>
+            <p className="section-subtitle">Technologies I work with</p>
           </div>
 
-          <div className="skill-category">
-            <div className="category-header">
-              <h3>⚙️ Backend Development</h3>
-            </div>
-            <div className="skills-list">
-              {skills.backend.map((skill, index) => (
-                <div key={index} className="skill-item" style={{ animationDelay: `${index * 0.05}s` }}>
-                  <div className="skill-info">
-                    <span className="skill-icon">{skill.icon}</span>
-                    <span className="skill-name">{skill.name}</span>
-                    <span className="skill-percent">{skill.level}%</span>
-                  </div>
-                  <div className="skill-bar-container">
-                    <div
-                      className="skill-bar-fill backend"
-                      style={{ width: `${skill.level}%` }}
-                    ></div>
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div className="skill-filters">
+            <button 
+              className={`filter-btn ${activeSkill === 'all' ? 'active' : ''}`}
+              onClick={() => setActiveSkill('all')}
+            >
+              All Skills
+            </button>
+            <button 
+              className={`filter-btn ${activeSkill === 'frontend' ? 'active' : ''}`}
+              onClick={() => setActiveSkill('frontend')}
+            >
+              Frontend
+            </button>
+            <button 
+              className={`filter-btn ${activeSkill === 'backend' ? 'active' : ''}`}
+              onClick={() => setActiveSkill('backend')}
+            >
+              Backend
+            </button>
+            <button 
+              className={`filter-btn ${activeSkill === 'tools' ? 'active' : ''}`}
+              onClick={() => setActiveSkill('tools')}
+            >
+              Tools
+            </button>
           </div>
 
-          <div className="skill-category">
-            <div className="category-header">
-              <h3>🛠️ Tools & Others</h3>
-            </div>
-            <div className="skills-list">
-              {skills.tools.map((skill, index) => (
-                <div key={index} className="skill-item" style={{ animationDelay: `${index * 0.05}s` }}>
-                  <div className="skill-info">
-                    <span className="skill-icon">{skill.icon}</span>
-                    <span className="skill-name">{skill.name}</span>
-                    <span className="skill-percent">{skill.level}%</span>
-                  </div>
-                  <div className="skill-bar-container">
-                    <div
-                      className="skill-bar-fill tools"
-                      style={{ width: `${skill.level}%` }}
-                    ></div>
-                  </div>
+          <div className="skills-container">
+            {Object.entries(skills).map(([category, skillList]) => (
+              <div 
+                key={category} 
+                className={`skill-category ${activeSkill === 'all' || activeSkill === category ? 'visible' : 'hidden'}`}
+              >
+                <h3 className="category-title">
+                  {category === 'frontend' ? '🎨 Frontend' : 
+                   category === 'backend' ? '⚙️ Backend' : '🛠️ Tools'}
+                </h3>
+                <div className="skills-grid">
+                  {skillList.map((skill, index) => (
+                    <div key={index} className="skill-card">
+                      <div className="skill-header">
+                        <span className="skill-icon" style={{ color: skill.color }}>
+                          {skill.icon}
+                        </span>
+                        <h4 className="skill-name">{skill.name}</h4>
+                      </div>
+                      <div className="skill-progress">
+                        <div className="progress-bar">
+                          <div 
+                            className="progress-fill" 
+                            style={{ 
+                              width: `${skill.level}%`,
+                              background: `linear-gradient(90deg, ${skill.color}, ${skill.color}80)`
+                            }}
+                          ></div>
+                        </div>
+                        <span className="skill-level">{skill.level}%</span>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Timeline Section */}
       <section className="timeline-section">
-        <div className="section-header">
-          <h2>My Journey</h2>
-          <p>Education & Experience</p>
-        </div>
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title">My Journey</h2>
+            <p className="section-subtitle">Education & Professional Experience</p>
+          </div>
 
-        <div className="timeline">
-          {timeline.map((item, index) => (
-            <div
-              key={index}
-              className="timeline-item"
-              style={{ animationDelay: `${index * 0.2}s` }}
-            >
-              <div className="timeline-icon">{item.icon}</div>
-              <div className="timeline-content">
-                <span className="timeline-year">{item.year}</span>
-                <h3>{item.title}</h3>
-                <h4>{item.company}</h4>
-                <p>{item.description}</p>
+          <div className="timeline">
+            {timeline.map((item, index) => (
+              <div key={index} className={`timeline-item ${item.type}`}>
+                <div className="timeline-marker">
+                  <div className="marker-icon">{item.icon}</div>
+                  <div className="marker-line"></div>
+                </div>
+                <div className="timeline-content">
+                  <div className="timeline-header">
+                    <span className="timeline-year">{item.year}</span>
+                    <span className={`timeline-badge ${item.type}`}>
+                      {item.type === 'experience' ? 'Experience' : 'Education'}
+                    </span>
+                  </div>
+                  <h3 className="timeline-title">{item.title}</h3>
+                  <h4 className="timeline-company">{item.company}</h4>
+                  <p className="timeline-description">{item.description}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Interests Section */}
+      <section className="interests-section">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title">Beyond Coding</h2>
+            <p className="section-subtitle">What I enjoy doing</p>
+          </div>
+          <div className="interests-grid">
+            {interests.map((interest, index) => (
+              <div key={index} className="interest-card">
+                <div className="interest-icon">{interest.icon}</div>
+                <h3 className="interest-title">{interest.title}</h3>
+                <p className="interest-description">{interest.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="about-cta-section">
-        <div className="cta-content">
-          <h2>Interested in working together?</h2>
-          <p>I'm always open to discussing new projects and opportunities.</p>
-          <a href="/contact" className="btn btn-large">Let's Talk</a>
+      <section className="cta-section">
+        <div className="container">
+          <div className="cta-content">
+            <h2 className="cta-title">Let's Build Something Amazing Together!</h2>
+            <p className="cta-subtitle">
+              I'm currently available for freelance work and full-time opportunities.
+            </p>
+            <div className="cta-actions">
+              <a href="/contact" className="btn btn-primary btn-large">
+                <span>Start a Project</span>
+                <span className="icon">🚀</span>
+              </a>
+              <a href="mailto:your.email@example.com" className="btn btn-outline btn-large">
+                <span>Say Hello</span>
+                <span className="icon">👋</span>
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     </div>
