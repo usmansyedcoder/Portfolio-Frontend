@@ -1,7 +1,7 @@
 .navbar {
   background-color: #1a1a2e;
   padding: 1rem 2rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -26,6 +26,11 @@
 
 .nav-logo:hover {
   color: #00a8cc;
+}
+.logo {
+  height: 40px;
+  width: auto;
+  cursor: pointer;
 }
 
 .nav-menu {
