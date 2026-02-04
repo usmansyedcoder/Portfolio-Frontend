@@ -13,6 +13,16 @@ const Navbar = () => {
     { path: "/contact", label: "Contact" },
   ];
 
+  // Email functionality
+  const handleHireMe = () => {
+    const email = "2021-icp-0780@icp.edu.pk";
+    const subject = "Hiring Inquiry - Portfolio";
+    const body = "Hi Muhammad Usman,\n\nI came across your portfolio and I'm interested in discussing a potential opportunity with you.\n\nBest regards,";
+    
+    // Open default email client
+    window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  };
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -39,7 +49,9 @@ const Navbar = () => {
             </li>
           ))}
           <li>
-            <button className="hire-btn">Hire Me</button>
+            <button className="hire-btn" onClick={handleHireMe}>
+              Hire Me
+            </button>
           </li>
         </ul>
 
@@ -68,7 +80,9 @@ const Navbar = () => {
               {item.label}
             </Link>
           ))}
-          <button className="mobile-hire-btn">Hire Me</button>
+          <button className="mobile-hire-btn" onClick={handleHireMe}>
+            Hire Me
+          </button>
         </div>
       </div>
     </nav>
