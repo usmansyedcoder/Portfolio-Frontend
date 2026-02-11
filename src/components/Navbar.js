@@ -17,8 +17,9 @@ const Navbar = () => {
   const handleHireMe = () => {
     const email = "2021-icp-0780@icp.edu.pk";
     const subject = "Hiring Inquiry - Portfolio";
-    const body = "Hi Muhammad Usman,\n\nI came across your portfolio and I'm interested in discussing a potential opportunity with you.\n\nBest regards,";
-    
+    const body =
+      "Hi Muhammad Usman,\n\nI came across your portfolio and I'm interested in discussing a potential opportunity with you.\n\nBest regards,";
+
     // Open default email client
     window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
@@ -30,8 +31,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="nav-container">
-        <Link to="/" className="nav-logo">
-          <img src="/logo.jpg" alt="Logo" className="logo" />
+        <Link to="/" className="nav-logo logo">
           <span className="logo-text">MU</span>
         </Link>
 
@@ -39,7 +39,7 @@ const Navbar = () => {
         <ul className="nav-menu">
           {navItems.map((item) => (
             <li key={item.path}>
-              <Link 
+              <Link
                 to={item.path}
                 className={location.pathname === item.path ? "active" : ""}
               >
@@ -56,8 +56,8 @@ const Navbar = () => {
         </ul>
 
         {/* Mobile Menu Button */}
-        <button 
-          className={`hamburger ${isOpen ? "active" : ""}`} 
+        <button
+          className={`hamburger ${isOpen ? "active" : ""}`}
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
@@ -71,7 +71,7 @@ const Navbar = () => {
       <div className={`mobile-menu ${isOpen ? "active" : ""}`}>
         <div className="mobile-menu-content">
           {navItems.map((item) => (
-            <Link 
+            <Link
               key={item.path}
               to={item.path}
               className={`mobile-nav-item ${location.pathname === item.path ? "active" : ""}`}
