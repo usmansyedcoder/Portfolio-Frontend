@@ -157,30 +157,37 @@ const About = () => {
                     <span>Download CV</span>
                     <span className="icon">📥</span>
                   </a>
-                  <a href="/contact" className="btn btn-outline">
+                  <a
+                    href="https://linkedin.com/in/usmaniadev"
+                    className="btn btn-outline"
+                  >
                     <span>Let's Connect</span>
                     <span className="icon">👋</span>
                   </a>
                 </div>
                 <div className="social-links">
-                  <a href="https://github.com" target="_blank" rel="noreferrer">
+                  <a
+                    href="https://github.com/usmaniadev"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     GitHub
                   </a>
                   <a
-                    href="https://linkedin.com"
+                    href="https://linkedin.com/in/usmaniadev"
                     target="_blank"
                     rel="noreferrer"
                   >
                     LinkedIn
                   </a>
                   <a
-                    href="https://twitter.com"
+                    href="https://twitter.com/@Muhammad_usmane"
                     target="_blank"
                     rel="noreferrer"
                   >
                     Twitter
                   </a>
-                  <a href="mailto:your.email@example.com">Email</a>
+                  <a href="mailto:usmansyed.peshawar@gmail.com">Email</a>
                 </div>
               </div>
             </div>
