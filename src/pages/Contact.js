@@ -143,7 +143,7 @@ const Contact = () => {
                 <h4 className="social-title">Follow Me</h4>
                 <div className="social-icons">
                   <a
-                    href="https://github.com/usmaniadev"
+                    href="https://github.com/usmansyedcoder"
                     className="social-icon"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -156,7 +156,7 @@ const Contact = () => {
                     </svg>
                   </a>
                   <a
-                    href="https://linkedin.com/in/usmaniadev"
+                    href="https://linkedin.com/in/muhammad-usman-islamian"
                     className="social-icon"
                     target="_blank"
                     rel="noopener noreferrer"

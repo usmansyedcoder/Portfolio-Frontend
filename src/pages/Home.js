@@ -68,7 +68,7 @@ const Home = () => {
             </div>
             <div className="social-links">
               <a
-                href="https://github.com/usmaniadev"
+                href="https://github.com/usmansyedcoder"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
@@ -83,7 +83,7 @@ const Home = () => {
                 </div>
               </a>
               <a
-                href="https://linkedin.com/in/usmaniadev"
+                href="https://linkedin.com/in/muhammad-usman-islamian"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"

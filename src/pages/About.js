@@ -158,7 +158,7 @@ const About = () => {
                     <span className="icon">📥</span>
                   </a>
                   <a
-                    href="https://linkedin.com/in/usmaniadev"
+                    href="https://linkedin.com/in/muhammad-usman-islamian"
                     className="btn btn-outline"
                   >
                     <span>Let's Connect</span>
@@ -167,14 +167,14 @@ const About = () => {
                 </div>
                 <div className="social-links">
                   <a
-                    href="https://github.com/usmaniadev"
+                    href="https://github.com/usmansyedcoder"
                     target="_blank"
                     rel="noreferrer"
                   >
                     GitHub
                   </a>
                   <a
-                    href="https://linkedin.com/in/usmaniadev"
+                    href="https://linkedin.com/in/muhammad-usman-islamian"
                     target="_blank"
                     rel="noreferrer"
                   >
