@@ -17,25 +17,7 @@ const Home = () => {
     { number: "24/7", label: "Support Available" },
   ];
 
-  const mlHighlights = [
-    {
-      title: "Neural Networks",
-      description: "Deep learning models for complex pattern recognition",
-    },
-    {
-      title: "Computer Vision",
-      description:
-        "Image classification, object detection, and facial recognition",
-    },
-    {
-      title: "NLP",
-      description: "Text analysis, sentiment detection, and language models",
-    },
-    {
-      title: "Predictive Analytics",
-      description: "Data-driven forecasting and trend analysis",
-    },
-  ];
+ 
 
   return (
     <div className="home">
