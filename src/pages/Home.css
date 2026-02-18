@@ -76,9 +76,7 @@
 @keyframes slideInLeft {
   from {
     opacity: 0;
-    transform: translateY(
-      -20px
-    ); /* Changed from translateX(-50px) to translateY(-20px) */
+    transform: translateY(-20px);
   }
   to {
     opacity: 1;
@@ -584,44 +582,6 @@
   transform: scale(1.1) rotate(360deg);
 }
 
-.firebase-card:hover .mern-icon {
-  transform: scale(1.1) rotate(360deg);
-}
-
-.vite-card:hover .mern-icon,
-.node-card:hover .mern-icon,
-.react-card:hover .mern-icon,
-.express-card:hover .mern-icon,
-.mongo-card:hover .mern-icon .firebase-card:hover .mern-icon {
-  animation: viteSpin 1s ease-in-out;
-}
-
-@keyframes firePulse {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.15);
-    box-shadow: 0 12px 35px rgba(255, 160, 0, 0.5);
-  }
-}
-
-@keyframes viteSpin {
-  0% {
-    transform: rotate(0deg) scale(1);
-  }
-
-  50% {
-    transform: rotate(180deg) scale(1.1);
-  }
-
-  100% {
-    transform: rotate(360deg) scale(1);
-  }
-}
-
 .mern-info {
   flex: 1;
 }
@@ -820,6 +780,283 @@
 
 .tech-bubble:hover {
   animation-play-state: paused;
+}
+
+/* AI/ML Section Styles */
+.ai-ml-section {
+  margin-top: 5rem;
+  padding: 3rem;
+  background: linear-gradient(
+    135deg,
+    rgba(15, 15, 35, 0.8) 0%,
+    rgba(26, 26, 46, 0.9) 100%
+  );
+  border-radius: 30px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.ai-ml-section::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(0, 212, 255, 0.1) 0%,
+    transparent 50%
+  );
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.ai-ml-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.ai-ml-title {
+  font-size: 2.5rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+}
+
+.ai-icon {
+  font-size: 2rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.ai-ml-subtitle {
+  color: #b0b0b0;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* AI Cards Grid */
+.ai-ml-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* AI Card Styles */
+.ai-card {
+  height: 320px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.ai-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+  border-radius: 25px;
+}
+
+.ai-card:hover .ai-card-inner {
+  transform: rotateY(180deg);
+}
+
+.ai-card-front,
+.ai-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 25px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.05)
+  );
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ai-card-front {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: white;
+}
+
+.ai-card-back {
+  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
+  color: white;
+  transform: rotateY(180deg);
+  border: 2px solid rgba(0, 212, 255, 0.3);
+}
+
+.ai-icon-large {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.ai-card-front h4 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #00d4ff 0%, #00a8cc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ai-card-front p {
+  color: #b0b0b0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.ai-card-back h5 {
+  font-size: 1.3rem;
+  color: #00d4ff;
+  margin-bottom: 1.5rem;
+}
+
+.ai-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+  text-align: left;
+  width: 100%;
+}
+
+.ai-features li {
+  color: #e0e0e0;
+  margin-bottom: 0.8rem;
+  padding-left: 1.5rem;
+  position: relative;
+  font-size: 0.9rem;
+}
+
+.ai-features li::before {
+  content: "🤖";
+  position: absolute;
+  left: 0;
+  color: #00d4ff;
+  font-size: 0.8rem;
+}
+
+.ai-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.ai-tech-tags span {
+  background: rgba(0, 212, 255, 0.1);
+  color: #00d4ff;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  border: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+/* Card-specific styles */
+.ml-card .ai-card-back {
+  border-color: rgba(0, 212, 255, 0.5);
+}
+
+.dl-card .ai-card-back {
+  border-color: rgba(156, 39, 176, 0.5);
+}
+
+.flutter-ai-card .ai-card-back {
+  border-color: rgba(2, 86, 155, 0.5);
+}
+
+.applications-card .ai-card-back {
+  border-color: rgba(76, 175, 80, 0.5);
+}
+
+/* AI Stats */
+.ai-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 25px;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  margin-top: 2rem;
+}
+
+.ai-stat-item {
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+}
+
+.ai-stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #00d4ff 0%, #00a8cc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+  animation: countUp 2s ease-out;
+}
+
+.ai-stat-label {
+  color: #b0b0b0;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Flutter-specific styles */
+.flutter-card .mern-icon {
+  animation: flutterWave 2s ease-in-out infinite;
+}
+
+@keyframes flutterWave {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1) rotate(5deg);
+  }
+}
+
+/* Add Flutter badge to MERN section */
+.flutter-badge {
+  background: linear-gradient(135deg, #02569b, #0175c2);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
 }
 
 /* Services Section - Square Rotating Cards */
@@ -1045,14 +1282,6 @@
   border-color: rgba(0, 212, 255, 0.5);
 }
 
-.mobile-dev-card {
-  --card-color: rgba(255, 107, 107, 0.1);
-}
-
-.mobile-dev-card .service-card-back {
-  border-color: rgba(255, 107, 107, 0.5);
-}
-
 .flutter-card {
   --card-color: rgba(2, 86, 155, 0.1);
 }
@@ -1069,6 +1298,14 @@
   border-color: rgba(51, 153, 51, 0.5);
 }
 
+.ml-service-card {
+  --card-color: rgba(255, 111, 0, 0.1);
+}
+
+.ml-service-card .service-card-back {
+  border-color: rgba(255, 111, 0, 0.5);
+}
+
 .database-card {
   --card-color: rgba(71, 162, 72, 0.1);
 }
@@ -1077,11 +1314,11 @@
   border-color: rgba(71, 162, 72, 0.5);
 }
 
-.design-card {
+.dl-service-card {
   --card-color: rgba(156, 39, 176, 0.1);
 }
 
-.design-card .service-card-back {
+.dl-service-card .service-card-back {
   border-color: rgba(156, 39, 176, 0.5);
 }
 
@@ -1267,6 +1504,10 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
   }
+
+  .ai-ml-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* Tablets and Mobile Landscape (max-width: 768px) */
@@ -1424,6 +1665,76 @@
   }
 
   .bubble-text {
+    font-size: 0.8rem;
+  }
+
+  /* AI/ML Section */
+  .ai-ml-section {
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+  }
+
+  .ai-ml-title {
+    font-size: 2rem;
+    gap: 1rem;
+  }
+
+  .ai-ml-title .ai-icon {
+    font-size: 1.5rem;
+  }
+
+  .ai-ml-subtitle {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .ai-ml-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .ai-card {
+    height: 280px;
+  }
+
+  .ai-icon-large {
+    font-size: 3rem;
+  }
+
+  .ai-card-front h4 {
+    font-size: 1.3rem;
+  }
+
+  .ai-card-front p {
+    font-size: 0.85rem;
+  }
+
+  .ai-card-back h5 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .ai-features li {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .ai-tech-tags span {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.6rem;
+  }
+
+  .ai-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+
+  .ai-stat-number {
+    font-size: 2rem;
+  }
+
+  .ai-stat-label {
     font-size: 0.8rem;
   }
 
@@ -1676,6 +1987,42 @@
     font-size: 0.75rem;
   }
 
+  /* AI/ML Section */
+  .ai-ml-title {
+    font-size: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .ai-ml-title .ai-icon {
+    font-size: 1.2rem;
+  }
+
+  .ai-ml-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .ai-card {
+    height: 260px;
+  }
+
+  .ai-icon-large {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .ai-card-front h4 {
+    font-size: 1.2rem;
+  }
+
+  .ai-stats {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .ai-stat-item {
+    padding: 0.8rem;
+  }
+
   /* Services Section */
   .services-section {
     padding: 3rem 1rem;
@@ -1832,6 +2179,10 @@
     padding: 0.8rem 1.8rem;
     font-size: 0.9rem;
   }
+
+  .ai-ml-title {
+    font-size: 1.3rem;
+  }
 }
 
 /* Landscape Mobile Orientation */
@@ -1937,5 +2288,122 @@
   .profile-image,
   .scroll-arrow {
     will-change: transform;
+  }
+}
+
+/* Add hover effects for AI cards */
+.ai-card:hover .ai-icon-large {
+  animation: bounce 0.5s ease;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* Glow effects for AI section */
+.ai-card-front::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #00d4ff, #00a8cc, #02569b, #0175c2);
+  border-radius: 25px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.ai-card:hover .ai-card-front::after {
+  opacity: 0.3;
+  animation: borderRotate 3s linear infinite;
+}
+
+@keyframes borderRotate {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* Update existing service card for Flutter */
+.flutter-card .service-card-front {
+  border-color: #02569b;
+}
+
+.flutter-card .service-card-back {
+  border-color: #02569b;
+}
+/* Add these new card-specific styles */
+
+/* AI-Powered Web Development Card */
+.web-ai-card .ai-card-back {
+  border-color: rgba(0, 212, 255, 0.5);
+}
+
+.web-ai-card .ai-card-front {
+  background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+}
+
+.web-ai-card .ai-icon-large {
+  animation: webGlow 3s ease-in-out infinite;
+}
+
+@keyframes webGlow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 5px #00d4ff);
+  }
+  50% {
+    filter: drop-shadow(0 0 20px #00d4ff);
+  }
+}
+
+.webapp-ml-card .ai-card-back {
+  border-color: rgba(97, 218, 251, 0.5);
+}
+
+.webapp-ml-card .ai-card-front {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+.webapp-ml-card .ai-icon-large {
+  animation: reactSpin 4s linear infinite;
+}
+
+@keyframes reactSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Update the grid layout for 6 cards */
+@media (min-width: 1200px) {
+  .ai-ml-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .ai-ml-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .ai-ml-grid {
+    grid-template-columns: 1fr;
   }
 }

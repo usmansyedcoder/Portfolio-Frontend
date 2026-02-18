@@ -10,34 +10,31 @@ const Home = () => {
     setIsVisible(true);
   }, []);
 
-  // const services = [
-  //   {
-  //     icon: '💻',
-  //     title: 'Web Development',
-  //     description: 'Building responsive and modern web applications using latest technologies'
-  //   },
-  //   {
-  //     icon: '📱',
-  //     title: 'Mobile Development',
-  //     description: 'Creating cross-platform mobile apps with Flutter and React Native'
-  //   },
-  //   {
-  //     icon: '⚙️',
-  //     title: 'Backend Development',
-  //     description: 'Developing robust RESTful APIs and server-side applications'
-  //   },
-  //   {
-  //     icon: '🎨',
-  //     title: 'UI/UX Design',
-  //     description: 'Designing beautiful and intuitive user interfaces'
-  //   }
-  // ];
-
   const stats = [
     { number: "50+", label: "Projects Completed" },
     { number: "3+", label: "Years Experience" },
     { number: "100%", label: "Client Satisfaction" },
     { number: "24/7", label: "Support Available" },
+  ];
+
+  const mlHighlights = [
+    {
+      title: "Neural Networks",
+      description: "Deep learning models for complex pattern recognition",
+    },
+    {
+      title: "Computer Vision",
+      description:
+        "Image classification, object detection, and facial recognition",
+    },
+    {
+      title: "NLP",
+      description: "Text analysis, sentiment detection, and language models",
+    },
+    {
+      title: "Predictive Analytics",
+      description: "Data-driven forecasting and trend analysis",
+    },
   ];
 
   return (
@@ -46,15 +43,19 @@ const Home = () => {
       <section className={`hero ${isVisible ? "visible" : ""}`}>
         <div className="hero-content">
           <div className="hero-text">
-            <span className="greeting">Hello, I'm</span>
+            <span className="greeting">Hi there, I'm</span>
             <h1 className="name">Muhammad Usman</h1>
             <h2 className="title">
-              <span className="typed-text">MERN Stack Web Developer</span>
+              <span className="typed-text">
+                Full-Stack Developer | Flutter | MERN | AI/ML Enthusiast
+              </span>
             </h2>
             <p className="description">
-              I craft elegant digital experiences that solve real-world
-              problems. Passionate about building scalable web applications with
-              clean code and modern technologies.
+              Transforming complex problems into seamless digital solutions. I
+              specialize in building robust full-stack applications with the
+              MERN stack and cross-platform mobile apps with Flutter, while
+              exploring the frontiers of machine and deep learning to create
+              intelligent, future-ready systems.
             </p>
             <div className="cta-buttons">
               <Link to="/projects" className="btn btn-primary">
@@ -230,7 +231,6 @@ const Home = () => {
                     </div>
                   </div>
                 </div>
-                {/* Add these two cards after the Node.js card in your MERN grid */}
 
                 <div className="mern-card firebase-card">
                   <div className="mern-icon">🔥</div>
@@ -272,19 +272,19 @@ const Home = () => {
               <div className="tech-bubble-grid">
                 <div
                   className="tech-bubble"
-                  style={{ "--tech-color": "#3178C6" }}
+                  style={{ "--tech-color": "#02569B" }}
                 >
-                  <div className="bubble-icon">🔷</div>
-                  <span className="bubble-text">TypeScript</span>
+                  <div className="bubble-icon">📱</div>
+                  <span className="bubble-text">Flutter</span>
                   <div className="bubble-glow"></div>
                 </div>
 
                 <div
                   className="tech-bubble"
-                  style={{ "--tech-color": "#02569B" }}
+                  style={{ "--tech-color": "#0175C2" }}
                 >
-                  <div className="bubble-icon">📱</div>
-                  <span className="bubble-text">Flutter</span>
+                  <div className="bubble-icon">🎯</div>
+                  <span className="bubble-text">Dart</span>
                   <div className="bubble-glow"></div>
                 </div>
 
@@ -326,36 +326,300 @@ const Home = () => {
 
                 <div
                   className="tech-bubble"
-                  style={{ "--tech-color": "#764ABC" }}
-                >
-                  <div className="bubble-icon">🔄</div>
-                  <span className="bubble-text">Redux</span>
-                  <div className="bubble-glow"></div>
-                </div>
-
-                <div
-                  className="tech-bubble"
                   style={{ "--tech-color": "#339933" }}
                 >
                   <div className="bubble-icon">📊</div>
                   <span className="bubble-text">MySQL</span>
                   <div className="bubble-glow"></div>
                 </div>
+
                 <div
                   className="tech-bubble"
-                  style={{ "--tech-color": "#339933" }}
+                  style={{ "--tech-color": "#FF6F00" }}
                 >
-                  <div className="bubble-icon">🗂️</div>
-                  <span className="bubble-text">MS Office</span>
+                  <div className="bubble-icon">🧠</div>
+                  <span className="bubble-text">TensorFlow</span>
                   <div className="bubble-glow"></div>
                 </div>
+
                 <div
                   className="tech-bubble"
-                  style={{ "--tech-color": "#339933" }}
+                  style={{ "--tech-color": "#FCC624" }}
                 >
-                  <div className="bubble-icon">⚛️</div>
-                  <span className="bubble-text">React</span>
+                  <div className="bubble-icon">🔥</div>
+                  <span className="bubble-text">PyTorch</span>
                   <div className="bubble-glow"></div>
+                </div>
+
+                <div
+                  className="tech-bubble"
+                  style={{ "--tech-color": "#43A047" }}
+                >
+                  <div className="bubble-icon">🤖</div>
+                  <span className="bubble-text">Scikit-learn</span>
+                  <div className="bubble-glow"></div>
+                </div>
+
+                <div
+                  className="tech-bubble"
+                  style={{ "--tech-color": "#E34F26" }}
+                >
+                  <div className="bubble-icon">📊</div>
+                  <span className="bubble-text">Pandas</span>
+                  <div className="bubble-glow"></div>
+                </div>
+
+                <div
+                  className="tech-bubble"
+                  style={{ "--tech-color": "#150458" }}
+                >
+                  <div className="bubble-icon">🔢</div>
+                  <span className="bubble-text">NumPy</span>
+                  <div className="bubble-glow"></div>
+                </div>
+
+                <div
+                  className="tech-bubble"
+                  style={{ "--tech-color": "#3776AB" }}
+                >
+                  <div className="bubble-icon">📈</div>
+                  <span className="bubble-text">Matplotlib</span>
+                  <div className="bubble-glow"></div>
+                </div>
+
+                <div
+                  className="tech-bubble"
+                  style={{ "--tech-color": "#FF6F00" }}
+                >
+                  <div className="bubble-icon">🗣️</div>
+                  <span className="bubble-text">NLP</span>
+                  <div className="bubble-glow"></div>
+                </div>
+
+                <div
+                  className="tech-bubble"
+                  style={{ "--tech-color": "#4285F4" }}
+                >
+                  <div className="bubble-icon">👁️</div>
+                  <span className="bubble-text">OpenCV</span>
+                  <div className="bubble-glow"></div>
+                </div>
+
+                <div
+                  className="tech-bubble"
+                  style={{ "--tech-color": "#FF6F00" }}
+                >
+                  <div className="bubble-icon">🤖</div>
+                  <span className="bubble-text">Keras</span>
+                  <div className="bubble-glow"></div>
+                </div>
+
+                <div
+                  className="tech-bubble"
+                  style={{ "--tech-color": "#0175C2" }}
+                >
+                  <div className="bubble-icon">📱</div>
+                  <span className="bubble-text">FlutterFlow</span>
+                  <div className="bubble-glow"></div>
+                </div>
+              </div>
+            </div>
+
+            {/* AI & Machine Learning Section */}
+            {/* AI & Machine Learning Section */}
+            <div className="ai-ml-section">
+              <div className="ai-ml-header">
+                <h3 className="ai-ml-title">
+                  <span className="ai-icon">🧠</span>
+                  AI & Machine Learning
+                  <span className="ai-icon">🤖</span>
+                </h3>
+                <p className="ai-ml-subtitle">
+                  Exploring the frontiers of artificial intelligence to build
+                  smarter applications
+                </p>
+              </div>
+
+              <div className="ai-ml-grid">
+                {/* Machine Learning Card */}
+                <div className="ai-card ml-card">
+                  <div className="ai-card-inner">
+                    <div className="ai-card-front">
+                      <div className="ai-icon-large">🤖</div>
+                      <h4>Machine Learning</h4>
+                      <p>
+                        Building intelligent systems that learn and improve from
+                        data
+                      </p>
+                    </div>
+                    <div className="ai-card-back">
+                      <h5>ML Expertise</h5>
+                      <ul className="ai-features">
+                        <li>Supervised Learning</li>
+                        <li>Unsupervised Learning</li>
+                        <li>Regression & Classification</li>
+                        <li>Model Deployment</li>
+                      </ul>
+                      <div className="ai-tech-tags">
+                        <span>Scikit-learn</span>
+                        <span>TensorFlow</span>
+                        <span>Python</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Deep Learning Card */}
+                <div className="ai-card dl-card">
+                  <div className="ai-card-inner">
+                    <div className="ai-card-front">
+                      <div className="ai-icon-large">🧠</div>
+                      <h4>Deep Learning</h4>
+                      <p>Neural networks for complex pattern recognition</p>
+                    </div>
+                    <div className="ai-card-back">
+                      <h5>Deep Learning Stack</h5>
+                      <ul className="ai-features">
+                        <li>Neural Networks</li>
+                        <li>CNN & RNN</li>
+                        <li>Transformers</li>
+                        <li>GANs</li>
+                      </ul>
+                      <div className="ai-tech-tags">
+                        <span>PyTorch</span>
+                        <span>TensorFlow</span>
+                        <span>Keras</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* NEW: AI-Powered Web Development Card */}
+                <div className="ai-card web-ai-card">
+                  <div className="ai-card-inner">
+                    <div className="ai-card-front">
+                      <div className="ai-icon-large">🌐</div>
+                      <h4>AI-Powered Web Dev</h4>
+                      <p>
+                        Intelligent web applications with integrated AI
+                        capabilities
+                      </p>
+                    </div>
+                    <div className="ai-card-back">
+                      <h5>AI Web Solutions</h5>
+                      <ul className="ai-features">
+                        <li>Smart Chatbots & Assistants</li>
+                        <li>AI-Powered Search</li>
+                        <li>Personalized Content</li>
+                        <li>Real-time Analytics</li>
+                      </ul>
+                      <div className="ai-tech-tags">
+                        <span>TensorFlow.js</span>
+                        <span>OpenAI API</span>
+                        <span>LangChain</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* NEW: Web Applications with ML Card */}
+                <div className="ai-card webapp-ml-card">
+                  <div className="ai-card-inner">
+                    <div className="ai-card-front">
+                      <div className="ai-icon-large">⚛️</div>
+                      <h4>Web Apps with ML</h4>
+                      <p>
+                        Full-stack applications powered by machine learning
+                        models
+                      </p>
+                    </div>
+                    <div className="ai-card-back">
+                      <h5>ML-Integrated Apps</h5>
+                      <ul className="ai-features">
+                        <li>MERN + ML Integration</li>
+                        <li>Real-time Predictions</li>
+                        <li>Data Visualization</li>
+                        <li>Model APIs & Endpoints</li>
+                      </ul>
+                      <div className="ai-tech-tags">
+                        <span>MERN Stack</span>
+                        <span>Flask API</span>
+                        <span>FastAPI</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Flutter Development Card */}
+                <div className="ai-card flutter-ai-card">
+                  <div className="ai-card-inner">
+                    <div className="ai-card-front">
+                      <div className="ai-icon-large">📱</div>
+                      <h4>Flutter & Dart</h4>
+                      <p>
+                        Cross-platform mobile development with AI integration
+                      </p>
+                    </div>
+                    <div className="ai-card-back">
+                      <h5>Flutter Expertise</h5>
+                      <ul className="ai-features">
+                        <li>iOS & Android Apps</li>
+                        <li>Custom Widgets</li>
+                        <li>State Management</li>
+                        <li>AI/ML Integration</li>
+                      </ul>
+                      <div className="ai-tech-tags">
+                        <span>Flutter</span>
+                        <span>Dart</span>
+                        <span>Firebase</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* AI Applications Card */}
+                <div className="ai-card applications-card">
+                  <div className="ai-card-inner">
+                    <div className="ai-card-front">
+                      <div className="ai-icon-large">🚀</div>
+                      <h4>AI Applications</h4>
+                      <p>Real-world AI solutions for modern problems</p>
+                    </div>
+                    <div className="ai-card-back">
+                      <h5>Applications</h5>
+                      <ul className="ai-features">
+                        <li>Computer Vision</li>
+                        <li>NLP Applications</li>
+                        <li>Predictive Analytics</li>
+                        <li>Recommendation Systems</li>
+                      </ul>
+                      <div className="ai-tech-tags">
+                        <span>OpenCV</span>
+                        <span>NLTK</span>
+                        <span>Hugging Face</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* AI Stats */}
+              <div className="ai-stats">
+                <div className="ai-stat-item">
+                  <div className="ai-stat-number">10+</div>
+                  <div className="ai-stat-label">AI/ML Projects</div>
+                </div>
+                <div className="ai-stat-item">
+                  <div className="ai-stat-number">5+</div>
+                  <div className="ai-stat-label">Deep Learning Models</div>
+                </div>
+                <div className="ai-stat-item">
+                  <div className="ai-stat-number">3+</div>
+                  <div className="ai-stat-label">Flutter Apps</div>
+                </div>
+                <div className="ai-stat-item">
+                  <div className="ai-stat-number">∞</div>
+                  <div className="ai-stat-label">Learning Always</div>
                 </div>
               </div>
             </div>
@@ -421,73 +685,34 @@ const Home = () => {
                 </div>
               </div>
 
-              {/* Mobile Development */}
-              <div className="service-card mobile-dev-card">
+              {/* Flutter Development */}
+              <div className="service-card flutter-card">
                 <div className="service-card-inner">
                   <div className="service-card-front">
                     <div className="service-icon-wrapper">
                       <div className="service-icon">📱</div>
                       <div className="icon-glow"></div>
                     </div>
-                    <h3>Mobile Development</h3>
-                    <p className="service-description">
-                      Cross-platform mobile solutions for iOS and Android
-                    </p>
-                  </div>
-                  <div className="service-card-back">
-                    <div className="service-details">
-                      <h4>Mobile Development</h4>
-                      <div className="features-container">
-                        <ul className="service-features">
-                          <li>iOS & Android Apps</li>
-                          <li>Flutter Development</li>
-                          <li>React Native</li>
-                          <li>Native Performance</li>
-                        </ul>
-                      </div>
-                      <div className="tech-tags">
-                        <span>Flutter</span>
-                        <span>React Native</span>
-                        <span>Dart</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="service-particles">
-                  <div className="particle"></div>
-                  <div className="particle"></div>
-                  <div className="particle"></div>
-                </div>
-              </div>
-
-              {/* Flutter App Development */}
-              <div className="service-card flutter-card">
-                <div className="service-card-inner">
-                  <div className="service-card-front">
-                    <div className="service-icon-wrapper">
-                      <div className="service-icon">🎯</div>
-                      <div className="icon-glow"></div>
-                    </div>
                     <h3>Flutter Development</h3>
                     <p className="service-description">
-                      Beautiful native apps with single codebase
+                      Cross-platform mobile apps with beautiful UI and native
+                      performance
                     </p>
                   </div>
                   <div className="service-card-back">
                     <div className="service-details">
-                      <h4>Flutter Development</h4>
-                      <div className="features-container">
-                        <ul className="service-features">
-                          <li>Single Codebase</li>
-                          <li>Native Performance</li>
-                          <li>Custom Widgets</li>
-                          <li>Material Design</li>
-                        </ul>
-                      </div>
+                      <h4>Flutter & Dart</h4>
+                      <ul className="service-features">
+                        <li>iOS & Android Apps</li>
+                        <li>Custom Animations</li>
+                        <li>State Management</li>
+                        <li>Firebase Integration</li>
+                      </ul>
                       <div className="tech-tags">
                         <span>Flutter</span>
                         <span>Dart</span>
                         <span>Firebase</span>
+                        <span>REST API</span>
                       </div>
                     </div>
                   </div>
@@ -538,6 +763,43 @@ const Home = () => {
                 </div>
               </div>
 
+              {/* Machine Learning */}
+              <div className="service-card ml-service-card">
+                <div className="service-card-inner">
+                  <div className="service-card-front">
+                    <div className="service-icon-wrapper">
+                      <div className="service-icon">🤖</div>
+                      <div className="icon-glow"></div>
+                    </div>
+                    <h3>Machine Learning</h3>
+                    <p className="service-description">
+                      Intelligent systems that learn and adapt from data
+                    </p>
+                  </div>
+                  <div className="service-card-back">
+                    <div className="service-details">
+                      <h4>ML Solutions</h4>
+                      <ul className="service-features">
+                        <li>Predictive Models</li>
+                        <li>Data Analysis</li>
+                        <li>Pattern Recognition</li>
+                        <li>Model Training</li>
+                      </ul>
+                      <div className="tech-tags">
+                        <span>Python</span>
+                        <span>TensorFlow</span>
+                        <span>Scikit-learn</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="service-particles">
+                  <div className="particle"></div>
+                  <div className="particle"></div>
+                  <div className="particle"></div>
+                </div>
+              </div>
+
               {/* Database Management */}
               <div className="service-card database-card">
                 <div className="service-card-inner">
@@ -577,34 +839,32 @@ const Home = () => {
                 </div>
               </div>
 
-              {/* UI/UX Design */}
-              <div className="service-card design-card">
+              {/* Deep Learning */}
+              <div className="service-card dl-service-card">
                 <div className="service-card-inner">
                   <div className="service-card-front">
                     <div className="service-icon-wrapper">
-                      <div className="service-icon">🎨</div>
+                      <div className="service-icon">🧠</div>
                       <div className="icon-glow"></div>
                     </div>
-                    <h3>UI/UX Design</h3>
+                    <h3>Deep Learning</h3>
                     <p className="service-description">
-                      Beautiful and intuitive user experiences
+                      Neural networks for complex problem solving
                     </p>
                   </div>
                   <div className="service-card-back">
                     <div className="service-details">
-                      <h4>UI/UX Design</h4>
-                      <div className="features-container">
-                        <ul className="service-features">
-                          <li>User Research</li>
-                          <li>Wireframing</li>
-                          <li>Prototyping</li>
-                          <li>Design Systems</li>
-                        </ul>
-                      </div>
+                      <h4>Deep Learning</h4>
+                      <ul className="service-features">
+                        <li>Computer Vision</li>
+                        <li>NLP Solutions</li>
+                        <li>Neural Networks</li>
+                        <li>Model Optimization</li>
+                      </ul>
                       <div className="tech-tags">
-                        <span>Figma</span>
-                        <span>Adobe XD</span>
-                        <span>Prototyping</span>
+                        <span>PyTorch</span>
+                        <span>TensorFlow</span>
+                        <span>Keras</span>
                       </div>
                     </div>
                   </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { submitContact } from "../api/api";
 import "./Contact.css";
 
@@ -12,6 +12,15 @@ const Contact = () => {
   const [status, setStatus] = useState({ type: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [activeField, setActiveField] = useState("");
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -79,6 +88,29 @@ const Contact = () => {
     },
   ];
 
+  const aiCapabilities = [
+    {
+      icon: "🤖",
+      title: "AI/ML Projects",
+      description: "Custom machine learning models and AI solutions",
+    },
+    {
+      icon: "📱",
+      title: "Flutter Apps",
+      description: "Cross-platform mobile apps with AI integration",
+    },
+    {
+      icon: "🧠",
+      title: "Deep Learning",
+      description: "Neural networks, computer vision, NLP solutions",
+    },
+    {
+      icon: "💻",
+      title: "Full Stack",
+      description: "MERN stack web applications with AI features",
+    },
+  ];
+
   return (
     <div className="contact-page">
       {/* Background Elements */}
@@ -88,6 +120,58 @@ const Contact = () => {
         <div className="floating-shape shape-3"></div>
         <div className="floating-shape shape-4"></div>
         <div className="grid-overlay"></div>
+
+        {/* AI/ML Tech Floating Icons */}
+        <div className="tech-floating-icons">
+          <div
+            className="tech-icon-float flutter"
+            style={{
+              transform: `translate(${mousePosition.x * 0.02}px, ${mousePosition.y * 0.02}px)`,
+            }}
+          >
+            📱
+          </div>
+          <div
+            className="tech-icon-float ai"
+            style={{
+              transform: `translate(${mousePosition.x * -0.03}px, ${mousePosition.y * -0.03}px)`,
+            }}
+          >
+            🤖
+          </div>
+          <div
+            className="tech-icon-float ml"
+            style={{
+              transform: `translate(${mousePosition.x * 0.015}px, ${mousePosition.y * -0.025}px)`,
+            }}
+          >
+            🧠
+          </div>
+          <div
+            className="tech-icon-float dart"
+            style={{
+              transform: `translate(${mousePosition.x * -0.02}px, ${mousePosition.y * 0.015}px)`,
+            }}
+          >
+            🎯
+          </div>
+          <div
+            className="tech-icon-float tensorflow"
+            style={{
+              transform: `translate(${mousePosition.x * 0.025}px, ${mousePosition.y * -0.02}px)`,
+            }}
+          >
+            🔷
+          </div>
+          <div
+            className="tech-icon-float pytorch"
+            style={{
+              transform: `translate(${mousePosition.x * -0.018}px, ${mousePosition.y * 0.022}px)`,
+            }}
+          >
+            🔥
+          </div>
+        </div>
       </div>
 
       <div className="contact-container">
@@ -95,14 +179,29 @@ const Contact = () => {
         <div className="contact-header">
           <div className="contact-badge">
             <span className="badge-icon">💬</span>
-            <span className="badge-text">Let's Talk</span>
+            <span className="badge-text">Let's Talk AI, Flutter & Web</span>
           </div>
-          <h1 className="contact-title">Get In Touch</h1>
+          <h1 className="contact-title">
+            Get In <span className="title-highlight">Touch</span>
+          </h1>
           <p className="contact-subtitle">
-            Have a project in mind? Let's discuss how we can work together to
-            bring your ideas to life. I'm always excited to hear about new
-            opportunities.
+            Have an AI/ML project, Flutter app idea, or web development need?
+            Let's discuss how we can work together to bring your ideas to life
+            with cutting-edge technology.
           </p>
+        </div>
+
+        {/* AI Capabilities Badges */}
+        <div className="ai-capabilities">
+          {aiCapabilities.map((item, index) => (
+            <div key={index} className="capability-badge">
+              <span className="capability-icon">{item.icon}</span>
+              <div className="capability-content">
+                <h4 className="capability-title">{item.title}</h4>
+                <p className="capability-description">{item.description}</p>
+              </div>
+            </div>
+          ))}
         </div>
 
         <div className="contact-content">
@@ -112,7 +211,8 @@ const Contact = () => {
               <h3 className="info-title">Contact Information</h3>
               <p className="info-description">
                 Feel free to reach out through any of these channels. I
-                typically respond within 24 hours.
+                typically respond within 24 hours, especially for AI/ML and
+                Flutter projects.
               </p>
 
               <div className="contact-methods">
@@ -140,7 +240,7 @@ const Contact = () => {
 
               {/* Social Links */}
               <div className="social-links">
-                <h4 className="social-title">Follow Me</h4>
+                <h4 className="social-title">Connect With Me</h4>
                 <div className="social-icons">
                   <a
                     href="https://github.com/usmansyedcoder"
@@ -181,6 +281,28 @@ const Contact = () => {
                       />
                     </svg>
                   </a>
+                  <a
+                    href="https://kaggle.com/muhammadusman"
+                    className="social-icon"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                      <path
+                        fill="currentColor"
+                        d="M12 0C5.373 0 0 5.373 0 12c0 6.627 5.373 12 12 12 6.627 0 12-5.373 12-12 0-6.627-5.373-12-12-12zm0 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              {/* Availability Status */}
+              <div className="availability-status">
+                <div className="status-indicator"></div>
+                <div className="status-text">
+                  <strong>Currently accepting:</strong> AI/ML Projects, Flutter
+                  Apps, Web Development
                 </div>
               </div>
             </div>
@@ -193,7 +315,7 @@ const Contact = () => {
                 <h3>Send Message</h3>
                 <p>
                   Fill out the form below and I'll get back to you as soon as
-                  possible.
+                  possible. Let's discuss your AI/ML or Flutter project!
                 </p>
               </div>
 
@@ -244,7 +366,7 @@ const Contact = () => {
                     type="text"
                     id="subject"
                     name="subject"
-                    placeholder="What's this about?"
+                    placeholder="What's this about? (e.g., AI Project, Flutter App, Web Development)"
                     value={formData.subject}
                     onChange={handleChange}
                     onFocus={() => handleFocus("subject")}
@@ -262,7 +384,7 @@ const Contact = () => {
                   <textarea
                     id="message"
                     name="message"
-                    placeholder="Tell me about your project or inquiry..."
+                    placeholder="Tell me about your project or inquiry... Are you interested in AI/ML, Flutter, or Web Development?"
                     value={formData.message}
                     onChange={handleChange}
                     onFocus={() => handleFocus("message")}

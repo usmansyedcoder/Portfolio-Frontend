@@ -60,7 +60,8 @@
 }
 
 @keyframes floatShape {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0) rotate(0deg);
   }
   50% {
@@ -74,7 +75,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: 
+  background:
     linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px),
     linear-gradient(180deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
   background-size: 50px 50px;
@@ -193,13 +194,18 @@
 }
 
 .contact-method::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 212, 255, 0.1),
+    transparent
+  );
   transition: left 0.5s ease;
 }
 
@@ -258,7 +264,8 @@
 }
 
 @keyframes pulseDot {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
     transform: scale(1);
   }
@@ -449,13 +456,18 @@
 }
 
 .submit-btn::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
   transition: left 0.5s ease;
 }
 
@@ -484,7 +496,12 @@
   left: -100%;
   width: 50%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
   animation: shine 3s ease-in-out infinite;
 }
 
@@ -554,7 +571,7 @@
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
+
   .contact-title {
     font-size: 3rem;
   }
@@ -564,24 +581,24 @@
   .contact-page {
     padding: 1rem;
   }
-  
+
   .contact-title {
     font-size: 2.5rem;
   }
-  
+
   .contact-subtitle {
     font-size: 1.1rem;
   }
-  
+
   .form-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .info-card,
   .advanced-contact-form {
     padding: 2rem;
   }
-  
+
   .contact-method {
     padding: 0.8rem 1.2rem;
   }
@@ -591,31 +608,26 @@
   .contact-title {
     font-size: 2rem;
   }
-  
+
   .contact-badge {
     padding: 0.4rem 1.2rem;
   }
-  
+
   .info-card,
   .advanced-contact-form {
     padding: 1.5rem;
   }
-  
+
   .contact-methods {
     gap: 0.8rem;
   }
-  
+
   .social-icons {
     justify-content: center;
   }
 }
 
-
-
-
-
 /* ////////////////// */
-
 
 /* ===== ENHANCED RESPONSIVE DESIGN ===== */
 
@@ -1125,7 +1137,7 @@
 
 /* Loading state for submit button */
 .submit-btn.submitting::after {
-  content: '';
+  content: "";
   width: 16px;
   height: 16px;
   margin-left: 8px;
@@ -1160,8 +1172,465 @@
   }
 }
 
-
 /* ///////// */
+
+/* Ensure full-width form groups span both columns */
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+/* Make sure the form grid has proper spacing */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+/* -------------------------------- */
+/* ===== ENHANCED AI/ML AND FLUTTER STYLES ===== */
+
+/* Title Highlight */
+.title-highlight {
+  background: linear-gradient(135deg, #00d4ff, #9c27b0, #ff6f00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  display: inline-block;
+}
+
+.title-highlight::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #00d4ff, #9c27b0, #ff6f00);
+  border-radius: 3px;
+  animation: widthPulse 2s ease-in-out infinite;
+}
+
+@keyframes widthPulse {
+  0%,
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+  50% {
+    width: 80%;
+    opacity: 0.7;
+  }
+}
+
+/* Tech Floating Icons */
+.tech-floating-icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.tech-icon-float {
+  position: absolute;
+  font-size: 2.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  padding: 15px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+  animation: floatIcon 6s ease-in-out infinite;
+}
+
+.tech-icon-float.flutter {
+  top: 15%;
+  left: 5%;
+  color: #02569b;
+  animation-delay: 0s;
+  border-color: rgba(2, 86, 155, 0.3);
+}
+
+.tech-icon-float.ai {
+  top: 70%;
+  right: 5%;
+  color: #ff6f00;
+  animation-delay: 1s;
+  border-color: rgba(255, 111, 0, 0.3);
+}
+
+.tech-icon-float.ml {
+  top: 30%;
+  right: 10%;
+  color: #9c27b0;
+  animation-delay: 2s;
+  border-color: rgba(156, 39, 176, 0.3);
+}
+
+.tech-icon-float.dart {
+  bottom: 20%;
+  left: 8%;
+  color: #0175c2;
+  animation-delay: 1.5s;
+  border-color: rgba(1, 117, 194, 0.3);
+}
+
+.tech-icon-float.tensorflow {
+  top: 50%;
+  left: 15%;
+  color: #ff6f00;
+  animation-delay: 2.5s;
+  border-color: rgba(255, 111, 0, 0.3);
+}
+
+.tech-icon-float.pytorch {
+  bottom: 30%;
+  right: 15%;
+  color: #ee4c2c;
+  animation-delay: 3s;
+  border-color: rgba(238, 76, 44, 0.3);
+}
+
+@keyframes floatIcon {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+/* AI Capabilities Section */
+.ai-capabilities {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 5;
+}
+
+.capability-badge {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.capability-badge::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.capability-badge:hover::before {
+  left: 100%;
+}
+
+.capability-badge:hover {
+  transform: translateY(-5px);
+  border-color: #00d4ff;
+  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+}
+
+.capability-icon {
+  font-size: 2rem;
+  min-width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 212, 255, 0.1);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.capability-badge:hover .capability-icon {
+  transform: scale(1.1) rotate(360deg);
+  background: rgba(0, 212, 255, 0.2);
+}
+
+.capability-content {
+  flex: 1;
+}
+
+.capability-title {
+  color: white;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+
+.capability-description {
+  color: #b0b0b0;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+/* Availability Status */
+.availability-status {
+  margin-top: 2rem;
+  padding: 1.2rem;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 212, 255, 0.1) 0%,
+    rgba(156, 39, 176, 0.1) 100%
+  );
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.status-indicator {
+  width: 12px;
+  height: 12px;
+  background: #00ff88;
+  border-radius: 50%;
+  animation: pulseStatus 2s ease-in-out infinite;
+  box-shadow: 0 0 0 3px rgba(0, 255, 136, 0.2);
+}
+
+@keyframes pulseStatus {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 3px rgba(0, 255, 136, 0.2);
+  }
+  50% {
+    transform: scale(1.2);
+    box-shadow: 0 0 0 6px rgba(0, 255, 136, 0.1);
+  }
+}
+
+.availability-status .status-text {
+  color: white;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.availability-status .status-text strong {
+  color: #00d4ff;
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 1rem;
+}
+
+/* Enhanced Form Placeholders */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+  transition: color 0.3s ease;
+}
+
+.form-group.active input::placeholder,
+.form-group.active textarea::placeholder {
+  color: rgba(0, 212, 255, 0.5);
+}
+
+/* Enhanced Submit Button */
+.submit-btn {
+  background: linear-gradient(135deg, #00d4ff 0%, #9c27b0 50%, #ff6f00 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Enhanced Status Message */
+.status-message {
+  position: relative;
+  overflow: hidden;
+}
+
+.status-message::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Responsive adjustments for new elements */
+@media (max-width: 768px) {
+  .tech-icon-float {
+    display: none;
+  }
+
+  .ai-capabilities {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .capability-badge {
+    padding: 1.2rem;
+  }
+
+  .capability-icon {
+    font-size: 1.8rem;
+    min-width: 45px;
+    height: 45px;
+  }
+
+  .availability-status {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.8rem;
+  }
+
+  .status-indicator {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .ai-capabilities {
+    margin-bottom: 1.5rem;
+  }
+
+  .capability-badge {
+    padding: 1rem;
+  }
+
+  .capability-icon {
+    font-size: 1.5rem;
+    min-width: 40px;
+    height: 40px;
+  }
+
+  .capability-title {
+    font-size: 0.95rem;
+  }
+
+  .capability-description {
+    font-size: 0.8rem;
+  }
+
+  .availability-status {
+    padding: 1rem;
+  }
+
+  .availability-status .status-text {
+    font-size: 0.9rem;
+  }
+
+  .availability-status .status-text strong {
+    font-size: 0.95rem;
+  }
+}
+
+/* Enhanced Social Icons with Colors */
+.social-icon {
+  position: relative;
+  overflow: hidden;
+}
+
+.social-icon:hover {
+  transform: translateY(-5px) scale(1.1);
+}
+
+.social-icon:nth-child(1):hover {
+  color: #333;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.social-icon:nth-child(2):hover {
+  color: #0077b5;
+  background: rgba(0, 119, 181, 0.15);
+}
+
+.social-icon:nth-child(3):hover {
+  color: #1da1f2;
+  background: rgba(29, 161, 242, 0.15);
+}
+
+.social-icon:nth-child(4):hover {
+  color: #20beff;
+  background: rgba(32, 190, 255, 0.15);
+}
+
+/* Loading Animation for Submit Button */
+.submit-btn.submitting {
+  cursor: wait;
+}
+
+.submit-btn.submitting .btn-text {
+  opacity: 0.8;
+}
+
+.submit-btn.submitting .btn-icon {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Prevent zoom on input focus for iOS */
+@media screen and (max-width: 768px) {
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    font-size: 16px;
+  }
+}
 
 /* Ensure full-width form groups span both columns */
 .form-group.full-width {

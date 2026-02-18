@@ -21,15 +21,23 @@
 }
 
 .projects-hero::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: 
-    radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 50%, rgba(0, 168, 204, 0.1) 0%, transparent 50%);
+  background:
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(0, 212, 255, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 50%,
+      rgba(0, 168, 204, 0.1) 0%,
+      transparent 50%
+    );
   pointer-events: none;
 }
 
@@ -151,12 +159,41 @@
   transition: all 0.3s ease;
   font-weight: 500;
   font-size: 0.95rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.filter-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition:
+    width 0.6s,
+    height 0.6s;
+  z-index: 0;
+}
+
+.filter-btn:hover::before {
+  width: 200px;
+  height: 200px;
+}
+
+.filter-btn span {
+  position: relative;
+  z-index: 1;
 }
 
 .filter-btn:hover {
   border-color: #00d4ff;
   color: #00d4ff;
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 212, 255, 0.2);
 }
 
 .filter-btn.active {
@@ -164,6 +201,25 @@
   color: white;
   border-color: #00d4ff;
   box-shadow: 0 4px 12px rgba(0, 212, 255, 0.3);
+}
+
+/* Special filter button styles */
+.filter-btn.ai-filter.active {
+  background: linear-gradient(135deg, #ff6f00 0%, #ff8f00 100%);
+  border-color: #ff6f00;
+  box-shadow: 0 4px 12px rgba(255, 111, 0, 0.3);
+}
+
+.filter-btn.flutter-filter.active {
+  background: linear-gradient(135deg, #02569b 0%, #0175c2 100%);
+  border-color: #02569b;
+  box-shadow: 0 4px 12px rgba(2, 86, 155, 0.3);
+}
+
+.filter-btn.dl-filter.active {
+  background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
+  border-color: #9c27b0;
+  box-shadow: 0 4px 12px rgba(156, 39, 176, 0.3);
 }
 
 /* Projects Section */
@@ -205,7 +261,7 @@
 }
 
 .project-card-modern::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -217,8 +273,30 @@
   z-index: 2;
 }
 
+/* Category-specific card borders */
+.project-card-modern.ai-ml::before {
+  background: linear-gradient(90deg, #ff6f00, #ff8f00, #ffb300, #ffa000);
+}
+
+.project-card-modern.flutter::before {
+  background: linear-gradient(90deg, #02569b, #0175c2, #42a5f5, #2196f3);
+}
+
+.project-card-modern.deep-learning::before {
+  background: linear-gradient(90deg, #9c27b0, #7b1fa2, #ba68c8, #ab47bc);
+}
+
+.project-card-modern.computer-vision::before {
+  background: linear-gradient(90deg, #4285f4, #34a853, #fbbc05, #ea4335);
+}
+
+.project-card-modern.nlp::before {
+  background: linear-gradient(90deg, #00acc1, #00838f, #4dd0e1, #26c6da);
+}
+
 @keyframes gradientShift {
-  0%, 100% {
+  0%,
+  100% {
     background-position: 0% 50%;
   }
   50% {
@@ -258,23 +336,92 @@
   background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
 }
 
+/* Category-specific header overlays */
+.project-header-modern.ai-ml {
+  background: linear-gradient(135deg, #ff6f00 0%, #ff8f00 100%);
+}
+
+.project-header-modern.flutter {
+  background: linear-gradient(135deg, #02569b 0%, #0175c2 100%);
+}
+
+.project-header-modern.deep-learning {
+  background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
+}
+
+.project-header-modern.computer-vision {
+  background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+}
+
+.project-header-modern.nlp {
+  background: linear-gradient(135deg, #00acc1 0%, #00838f 100%);
+}
+
 .project-header-modern::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: 
-    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 2px, transparent 2px),
-    radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.1) 2px, transparent 2px);
+  background-image:
+    radial-gradient(
+      circle at 25% 25%,
+      rgba(255, 255, 255, 0.1) 2px,
+      transparent 2px
+    ),
+    radial-gradient(
+      circle at 75% 75%,
+      rgba(255, 255, 255, 0.1) 2px,
+      transparent 2px
+    );
   background-size: 30px 30px;
   opacity: 0.3;
+}
+
+.project-header-modern::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 70%
+  );
+  animation: shine 3s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 .project-icon-container {
   position: relative;
   z-index: 2;
+}
+
+.project-type-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  z-index: 3;
 }
 
 /* Technology Icons */
@@ -294,6 +441,81 @@
   width: 50px;
   height: 50px;
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+/* New icon styles */
+.tech-icon-wrapper.flutter {
+  background: linear-gradient(135deg, #02569b, #0175c2);
+  animation: flutterPulse 2s ease-in-out infinite;
+}
+
+@keyframes flutterPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.tech-icon-wrapper.ai-ml {
+  background: linear-gradient(135deg, #ff6f00, #ff8f00);
+  animation: aiPulse 3s ease-in-out infinite;
+}
+
+@keyframes aiPulse {
+  0%,
+  100% {
+    box-shadow: 0 8px 25px rgba(255, 111, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 15px 35px rgba(255, 111, 0, 0.6);
+  }
+}
+
+.tech-icon-wrapper.deep-learning {
+  background: linear-gradient(135deg, #9c27b0, #7b1fa2);
+  animation: dlSpin 4s linear infinite;
+}
+
+@keyframes dlSpin {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.tech-icon-wrapper.computer-vision {
+  background: linear-gradient(135deg, #4285f4, #34a853);
+  animation: visionScan 3s ease-in-out infinite;
+}
+
+@keyframes visionScan {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}
+
+.tech-icon-wrapper.nlp {
+  background: linear-gradient(135deg, #00acc1, #00838f);
+  animation: nlpWave 3s ease-in-out infinite;
+}
+
+@keyframes nlpWave {
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.1);
+  }
 }
 
 .tech-icon-wrapper.js {
@@ -317,7 +539,8 @@
 }
 
 @keyframes iconFloat {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0) scale(1);
   }
   50% {
@@ -358,6 +581,19 @@
   box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
 }
 
+/* Category-specific language badges */
+.project-card-modern.ai-ml .language-badge {
+  background: linear-gradient(135deg, #ff6f00, #ff8f00);
+}
+
+.project-card-modern.flutter .language-badge {
+  background: linear-gradient(135deg, #02569b, #0175c2);
+}
+
+.project-card-modern.deep-learning .language-badge {
+  background: linear-gradient(135deg, #9c27b0, #7b1fa2);
+}
+
 .project-description-modern {
   color: #666;
   line-height: 1.7;
@@ -378,7 +614,11 @@
 }
 
 .tech-badge-modern {
-  background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 168, 204, 0.1) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 212, 255, 0.1) 0%,
+    rgba(0, 168, 204, 0.1) 100%
+  );
   color: #00a8cc;
   padding: 0.4rem 1rem;
   border-radius: 20px;
@@ -390,14 +630,50 @@
   overflow: hidden;
 }
 
+/* Category-specific tech badges */
+.project-card-modern.ai-ml .tech-badge-modern {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 111, 0, 0.1) 0%,
+    rgba(255, 143, 0, 0.1) 100%
+  );
+  color: #ff6f00;
+  border-color: rgba(255, 111, 0, 0.2);
+}
+
+.project-card-modern.flutter .tech-badge-modern {
+  background: linear-gradient(
+    135deg,
+    rgba(2, 86, 155, 0.1) 0%,
+    rgba(1, 117, 194, 0.1) 100%
+  );
+  color: #02569b;
+  border-color: rgba(2, 86, 155, 0.2);
+}
+
+.project-card-modern.deep-learning .tech-badge-modern {
+  background: linear-gradient(
+    135deg,
+    rgba(156, 39, 176, 0.1) 0%,
+    rgba(123, 31, 162, 0.1) 100%
+  );
+  color: #9c27b0;
+  border-color: rgba(156, 39, 176, 0.2);
+}
+
 .tech-badge-modern::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
   transition: left 0.5s ease;
 }
 
@@ -406,7 +682,11 @@
 }
 
 .tech-badge-modern.more {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(240, 240, 240, 0.9) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(240, 240, 240, 0.9) 100%
+  );
   color: #666;
   border-color: rgba(0, 0, 0, 0.1);
 }
@@ -435,13 +715,18 @@
 }
 
 .action-btn::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
   transition: left 0.5s ease;
   z-index: -1;
 }
@@ -456,9 +741,34 @@
   border: none;
 }
 
+/* Category-specific primary buttons */
+.project-card-modern.ai-ml .action-btn.primary {
+  background: linear-gradient(135deg, #ff6f00, #ff8f00);
+}
+
+.project-card-modern.flutter .action-btn.primary {
+  background: linear-gradient(135deg, #02569b, #0175c2);
+}
+
+.project-card-modern.deep-learning .action-btn.primary {
+  background: linear-gradient(135deg, #9c27b0, #7b1fa2);
+}
+
 .action-btn.primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0, 212, 255, 0.4);
+}
+
+.project-card-modern.ai-ml .action-btn.primary:hover {
+  box-shadow: 0 8px 20px rgba(255, 111, 0, 0.4);
+}
+
+.project-card-modern.flutter .action-btn.primary:hover {
+  box-shadow: 0 8px 20px rgba(2, 86, 155, 0.4);
+}
+
+.project-card-modern.deep-learning .action-btn.primary:hover {
+  box-shadow: 0 8px 20px rgba(156, 39, 176, 0.4);
 }
 
 .action-btn.secondary {
@@ -507,8 +817,12 @@
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .loading-container p,
@@ -530,6 +844,23 @@
   font-size: 2rem;
   color: #1a1a2e;
   margin-bottom: 1rem;
+}
+
+/* Enhanced hover effects */
+.project-card-modern:hover .tech-icon-wrapper {
+  animation: iconHover 0.6s ease forwards;
+}
+
+@keyframes iconHover {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
 }
 
 /* Responsive Design */
@@ -577,18 +908,18 @@
     width: 60px;
     height: 60px;
   }
-  
+
   .tech-icon {
     width: 35px;
     height: 35px;
   }
-  
+
   .project-header-clean {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
   }
-  
+
   .language-badge {
     align-self: flex-start;
   }
@@ -607,50 +938,80 @@
     padding: 1.5rem;
   }
 
+  .project-type-badge {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.8rem;
+  }
+
   .tech-icon-wrapper {
     width: 50px;
     height: 50px;
   }
-  
+
   .tech-icon {
     width: 30px;
     height: 30px;
   }
-}
 
-/* Enhanced hover effects */
-.project-card-modern:hover .tech-icon-wrapper {
-  animation: iconHover 0.6s ease forwards;
-}
-
-@keyframes iconHover {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1.05);
+  .filter-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
   }
 }
 
-.project-header-modern::before {
-  content: '';
+/* Animation for filter buttons */
+.filter-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.filter-btn::after {
+  content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
-  animation: shine 3s ease-in-out infinite;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
 }
 
-@keyframes shine {
+@keyframes ripple {
   0% {
-    transform: translateX(-100%);
+    transform: scale(0, 0);
+    opacity: 0.5;
   }
   100% {
-    transform: translateX(100%);
+    transform: scale(20, 20);
+    opacity: 0;
   }
+}
+
+.filter-btn:focus:not(:active)::after {
+  animation: ripple 1s ease-out;
+}
+
+/* Tooltip for project type */
+.project-type-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  z-index: 3;
+  transition: all 0.3s ease;
+}
+
+.project-card-modern:hover .project-type-badge {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.3);
 }
