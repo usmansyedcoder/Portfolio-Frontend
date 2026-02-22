@@ -17,8 +17,6 @@ const Home = () => {
     { number: "24/7", label: "Support Available" },
   ];
 
- 
-
   return (
     <div className="home">
       {/* Hero Section */}
@@ -99,8 +97,10 @@ const Home = () => {
           </div>
 
           {/* Hero Image Section */}
+          {/* Hero Image Section */}
           <div className="hero-image">
             <div className="image-container">
+              {/* Main profile image with single rotating line */}
               <img
                 src={profileImage}
                 alt="Muhammad Usman"

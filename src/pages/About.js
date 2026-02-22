@@ -18,7 +18,6 @@ const About = () => {
       { name: "HTML5 & CSS3", level: 95, icon: "🎨", color: "#E34F26" },
       { name: "Tailwind CSS", level: 90, icon: "💨", color: "#38B2AC" },
       { name: "Bootstrap", level: 88, icon: "🅱️", color: "#7952B3" },
-      { name: "TypeScript", level: 85, icon: "🔷", color: "#3178C6" },
     ],
     backend: [
       { name: "Node.js", level: 90, icon: "🟢", color: "#339933" },
@@ -27,7 +26,6 @@ const About = () => {
       { name: "Firebase", level: 90, icon: "🔥", color: "#FFA000" },
       { name: "REST APIs", level: 92, icon: "🔌", color: "#FF6B6B" },
       { name: "Authentication", level: 85, icon: "🔐", color: "#FFD166" },
-      { name: "PostgreSQL", level: 80, icon: "🐘", color: "#336791" },
     ],
     aiML: [
       { name: "Machine Learning", level: 88, icon: "🤖", color: "#FF6F00" },
@@ -44,7 +42,6 @@ const About = () => {
     mobile: [
       { name: "Flutter", level: 88, icon: "📱", color: "#02569B" },
       { name: "Dart", level: 85, icon: "🎯", color: "#0175C2" },
-      { name: "FlutterFlow", level: 80, icon: "💧", color: "#42A5F5" },
     ],
     tools: [
       { name: "Kaggle", level: 85, icon: "📊", color: "#20BEFF" },
@@ -202,12 +199,6 @@ const About = () => {
       icon: "📱",
       color: "#02569B",
     },
-    {
-      title: "MLOps",
-      description: "Model Deployment, API Integration, Model Monitoring",
-      icon: "🚀",
-      color: "#FF6B6B",
-    },
   ];
 
   return (
@@ -220,12 +211,20 @@ const About = () => {
       </div>
 
       {/* Hero Section */}
-      {/* Hero Section */}
       <section className="hero-section">
         <div className="container">
           <div className="hero-content">
             <div className="profile-container">
               <div className="profile-wrapper">
+                {/* Rotating Lines Container */}
+                <div className="rotating-lines-container">
+                  <div className="rotating-line line-1"></div>
+                  <div className="rotating-line line-2"></div>
+                  <div className="rotating-line line-3"></div>
+                  <div className="rotating-line line-4"></div>
+                </div>
+
+                {/* Profile Image */}
                 <div className="profile-gradient">
                   <img
                     src={require("./profile.jpeg")}
@@ -237,11 +236,12 @@ const About = () => {
                     }}
                   />
                 </div>
+
+                {/* Profile Badge */}
                 <div className="profile-badge">
                   <div className="badge-dot"></div>
                   <span>Available for AI/ML & Flutter Projects</span>
                 </div>
-                {/* Tech floating icons removed - cleaner profile image */}
               </div>
             </div>
 

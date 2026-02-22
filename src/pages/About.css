@@ -72,7 +72,127 @@
   height: 400px;
   margin: 0 auto;
 }
+/* Rotating Lines Container */
+.rotating-lines-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 520px;
+  height: 520px;
+  z-index: 5;
+  pointer-events: none;
+}
 
+.rotating-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  animation: rotateLine var(--speed) linear infinite;
+  filter: drop-shadow(0 0 8px var(--color));
+}
+
+/* Line 1 - Electric Blue */
+.rotating-line.line-1 {
+  --color: #00d4ff;
+  --speed: 3s;
+  border-top: 3px solid #00d4ff;
+  border-bottom: 3px solid #00d4ff;
+  opacity: 0.8;
+}
+
+/* Line 2 - Purple */
+.rotating-line.line-2 {
+  --color: #9c27b0;
+  --speed: 4s;
+  border-left: 3px solid #9c27b0;
+  border-right: 3px solid #9c27b0;
+  opacity: 0.7;
+  animation-direction: reverse;
+}
+
+/* Line 3 - Orange */
+.rotating-line.line-3 {
+  --color: #ff6f00;
+  --speed: 5s;
+  border-top: 3px solid #ff6f00;
+  border-bottom: 3px solid #ff6f00;
+  border-left: 3px solid #ff6f00;
+  border-right: 3px solid #ff6f00;
+  opacity: 0.6;
+  width: 90%;
+  height: 90%;
+  top: 5%;
+  left: 5%;
+}
+
+/* Line 4 - Green */
+.rotating-line.line-4 {
+  --color: #00ff88;
+  --speed: 6s;
+  border-top: 3px dashed #00ff88;
+  border-bottom: 3px dashed #00ff88;
+  opacity: 0.5;
+  width: 80%;
+  height: 80%;
+  top: 10%;
+  left: 10%;
+  animation-direction: reverse;
+}
+
+@keyframes rotateLine {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive adjustments for rotating lines */
+@media (max-width: 1200px) {
+  .rotating-lines-container {
+    width: 450px;
+    height: 450px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .rotating-lines-container {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .rotating-lines-container {
+    width: 350px;
+    height: 350px;
+  }
+
+  .rotating-line.line-3,
+  .rotating-line.line-4 {
+    display: none; /* Hide inner lines on smaller screens for cleaner look */
+  }
+}
+
+@media (max-width: 480px) {
+  .rotating-lines-container {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 360px) {
+  .rotating-lines-container {
+    width: 270px;
+    height: 270px;
+  }
+}
 /* REMOVED ROTATING GRADIENT - FIXED VERSION */
 .profile-gradient {
   width: 100%;

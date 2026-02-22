@@ -9,6 +9,7 @@ const Projects = () => {
   const [error, setError] = useState(null);
   const [filter, setFilter] = useState("all");
   const [isVisible, setIsVisible] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
@@ -130,6 +131,22 @@ const Projects = () => {
     ...new Set(projects.map((p) => p.language).filter(Boolean)),
   ];
 
+  // Get filter display label
+  const getFilterLabel = (filter) => {
+    switch (filter) {
+      case "all":
+        return "All Projects";
+      case "ai-ml":
+        return "AI/ML";
+      case "flutter":
+        return "Flutter/Dart";
+      case "deep-learning":
+        return "Deep Learning";
+      default:
+        return filter.charAt(0).toUpperCase() + filter.slice(1);
+    }
+  };
+
   // Get appropriate icon based on project type
   const getProjectIcon = (project, index) => {
     const language = project.language?.toLowerCase();
@@ -206,20 +223,6 @@ const Projects = () => {
     }
   };
 
-  // Get filter button label
-  const getFilterLabel = (filter) => {
-    switch (filter) {
-      case "ai-ml":
-        return "AI/ML";
-      case "flutter":
-        return "Flutter/Dart";
-      case "deep-learning":
-        return "Deep Learning";
-      default:
-        return filter.charAt(0).toUpperCase() + filter.slice(1);
-    }
-  };
-
   if (loading) {
     return (
       <div className="projects-page">
@@ -271,20 +274,42 @@ const Projects = () => {
         </div>
       </section>
 
-      {/* Filter Section */}
+      {/* Filter Section with Dropdown */}
       <section className="filter-section">
         <div className="filter-container">
           <h3>Filter by Technology</h3>
-          <div className="filter-buttons">
-            {languages.map((lang, index) => (
-              <button
-                key={index}
-                className={`filter-btn ${filter === lang ? "active" : ""} ${lang === "ai-ml" ? "ai-filter" : ""} ${lang === "flutter" ? "flutter-filter" : ""} ${lang === "deep-learning" ? "dl-filter" : ""}`}
-                onClick={() => setFilter(lang)}
+          <div className="custom-dropdown">
+            <button
+              className={`dropdown-btn ${filter !== "all" ? "active" : ""}`}
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+            >
+              <span>{getFilterLabel(filter)}</span>
+              <svg
+                className={`dropdown-arrow ${isDropdownOpen ? "open" : ""}`}
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="currentColor"
               >
-                {getFilterLabel(lang)}
-              </button>
-            ))}
+                <path d="M8 11L3 6h10l-5 5z" />
+              </svg>
+            </button>
+            {isDropdownOpen && (
+              <div className="dropdown-menu">
+                {languages.map((lang, index) => (
+                  <button
+                    key={index}
+                    className={`dropdown-item ${filter === lang ? "active" : ""} ${lang === "ai-ml" ? "ai-filter" : ""} ${lang === "flutter" ? "flutter-filter" : ""} ${lang === "deep-learning" ? "dl-filter" : ""}`}
+                    onClick={() => {
+                      setFilter(lang);
+                      setIsDropdownOpen(false);
+                    }}
+                  >
+                    {getFilterLabel(lang)}
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -298,18 +323,13 @@ const Projects = () => {
               className={`project-card-modern ${project.category}`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Project Header */}
+              {/* Project Header - Removed project-type-badge */}
               <div
                 className={`project-header-modern gradient-${index % 5} ${project.category}`}
               >
                 <div className="project-icon-container">
                   {getProjectIcon(project, index)}
                 </div>
-                {project.projectType && (
-                  <div className="project-type-badge">
-                    {project.projectType[0]}
-                  </div>
-                )}
               </div>
 
               {/* Project Body */}
