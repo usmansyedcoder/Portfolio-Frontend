@@ -282,7 +282,7 @@ const Contact = () => {
                     </svg>
                   </a>
                   <a
-                    href="https://kaggle.com/muhammadusman"
+                    href="https://www.kaggle.com/usmanislamian"
                     className="social-icon"
                     target="_blank"
                     rel="noopener noreferrer"
