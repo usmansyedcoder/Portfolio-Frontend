@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import profileImage from "../assets/profile.jpeg";
+import profileImage from "../assets/profile.png";
 import "./Home.css";
 
 const Home = () => {
@@ -97,10 +97,8 @@ const Home = () => {
           </div>
 
           {/* Hero Image Section */}
-          {/* Hero Image Section */}
           <div className="hero-image">
             <div className="image-container">
-              {/* Main profile image with single rotating line */}
               <img
                 src={profileImage}
                 alt="Muhammad Usman"

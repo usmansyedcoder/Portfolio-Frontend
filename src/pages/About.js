@@ -100,7 +100,7 @@ const About = () => {
       title: "Bachelor in Computer Science",
       company: "Islamia College Peshawar, Pakistan",
       description:
-        "Focused on software engineering, web development, database management, and artificial intelligence. CGPA: 3.8/4.0",
+        "Focused on software engineering, web development, database management, and artificial intelligence. CGPA: 3.49/4.0",
       icon: "🎓",
       type: "education",
       tags: ["CS Fundamentals", "AI/ML", "Web Dev"],
@@ -227,7 +227,7 @@ const About = () => {
                 {/* Profile Image */}
                 <div className="profile-gradient">
                   <img
-                    src={require("./profile.jpeg")}
+                    src={require("./profile.png")}
                     alt="Muhammad Usman"
                     className="profile-img"
                     onError={(e) => {
@@ -240,7 +240,7 @@ const About = () => {
                 {/* Profile Badge */}
                 <div className="profile-badge">
                   <div className="badge-dot"></div>
-                  <span>Available for AI/ML & Flutter Projects</span>
+                  <span>Available for AI/ML, Web & Flutter Projects</span>
                 </div>
               </div>
             </div>

@@ -115,22 +115,9 @@ const Contact = () => {
     <div className="contact-page">
       {/* Background Elements */}
       <div className="contact-background">
-        <div className="floating-shape shape-1"></div>
-        <div className="floating-shape shape-2"></div>
-        <div className="floating-shape shape-3"></div>
-        <div className="floating-shape shape-4"></div>
-        <div className="grid-overlay"></div>
-
-        {/* AI/ML Tech Floating Icons */}
+        
         <div className="tech-floating-icons">
-          <div
-            className="tech-icon-float flutter"
-            style={{
-              transform: `translate(${mousePosition.x * 0.02}px, ${mousePosition.y * 0.02}px)`,
-            }}
-          >
-            📱
-          </div>
+          
           <div
             className="tech-icon-float ai"
             style={{
@@ -177,10 +164,6 @@ const Contact = () => {
       <div className="contact-container">
         {/* Header Section */}
         <div className="contact-header">
-          <div className="contact-badge">
-            <span className="badge-icon">💬</span>
-            <span className="badge-text">Let's Talk AI, Flutter & Web</span>
-          </div>
           <h1 className="contact-title">
             Get In <span className="title-highlight">Touch</span>
           </h1>
