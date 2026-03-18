@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { TypeAnimation } from 'react-type-animation'; // Change this import
 import profileImage from "../assets/profile.png";
 import "./Home.css";
 
@@ -26,9 +27,24 @@ const Home = () => {
             <span className="greeting">Hi there, I'm</span>
             <h1 className="name">Muhammad Usman</h1>
             <h2 className="title">
-              <span className="typed-text">
-                Full-Stack Developer | Flutter | MERN | AI/ML Enthusiast
-              </span>
+              <TypeAnimation
+                sequence={[
+                  'I am a Web Developer', 
+                  2000, 
+                  'I am a Flutter Developer', 
+                  2000, 
+                  'I am an AI/ML Developer', 
+                  2000, 
+                  'I am a Full-Stack Developer', 
+                  2000, 
+                ]}
+                wrapper="span"
+                speed={50}
+                repeat={Infinity}
+                cursor={true}
+                cursorStyle="|"
+                className="typed-text"
+              />
             </h2>
             <p className="description">
               Transforming complex problems into seamless digital solutions. I

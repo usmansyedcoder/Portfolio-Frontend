@@ -67,8 +67,9 @@ const Footer = () => {
             <p className="footer-description">
               Full Stack Developer & AI Explorer. Crafting seamless digital
               experiences with the MERN stack and pushing boundaries at the
-              intersection of web development and machine learning.
+              intersection of web development, Machine learning & AI.
             </p>
+           
             <div className="footer-social">
               {socialLinks.map((social, index) => (
                 <a
