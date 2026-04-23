@@ -1,4 +1,4 @@
-/* Hide default cursor */
+/* Hide default cursor
 html, * {
   cursor: none;
 }
@@ -61,4 +61,4 @@ a, button, input, textarea, select {
   html, * {
     cursor: auto;
   }
-}
+} 

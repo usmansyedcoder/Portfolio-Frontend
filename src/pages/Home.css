@@ -36,10 +36,12 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+  /* background: linear-gradient(135deg, #3bd427 0%, #1a1a2e 50%, #3a6fff 100%); */
+  background-color: black;
   color: #fff;
   padding: 2rem;
   position: relative;
+  
   overflow: hidden;
   opacity: 0;
   transform: translateY(20px);
@@ -449,7 +451,8 @@
 /* Tech Stack Section */
 .tech-stack-section {
   padding: 6rem 0;
-  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+  /* background: linear-gradient(135deg, #3bd427 0%, #1a1a2e 50%, #3a6fff 100%); */
+  background-color: black;
   position: relative;
   overflow: hidden;
 }
@@ -1008,7 +1011,7 @@
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.1),
-    rgba(255, 255, 255, 0.05)
+    rgba(207, 53, 53, 0.05)
   );
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);

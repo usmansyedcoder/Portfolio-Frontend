@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
   const navItems = [
@@ -13,6 +14,20 @@ const Navbar = () => {
     { path: "/contact", label: "Contact" },
   ];
 
+  // Add scroll event listener
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   // Email functionality
   const handleHireMe = () => {
     const email = "2021-icp-0780@icp.edu.pk";
@@ -20,7 +35,6 @@ const Navbar = () => {
     const body =
       "Hi Muhammad Usman,\n\nI came across your portfolio and I'm interested in discussing a potential opportunity with you.\n\nBest regards,";
 
-    // Open default email client
     window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
@@ -29,7 +43,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
       <div className="nav-container">
         <Link to="/" className="nav-logo logo">
           <span className="logo-text">MU</span>

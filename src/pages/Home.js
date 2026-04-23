@@ -263,7 +263,7 @@ const Home = () => {
             </div>
 
             {/* Other Technologies */}
-            <div className="other-tech-section">
+            {/* <div className="other-tech-section">
               <h3 className="other-tech-title">Other Technologies</h3>
               <div className="tech-bubble-grid">
                 <div
@@ -419,7 +419,7 @@ const Home = () => {
                   <div className="bubble-glow"></div>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* AI & Machine Learning Section */}
             {/* AI & Machine Learning Section */}
@@ -708,7 +708,6 @@ const Home = () => {
                         <span>Flutter</span>
                         <span>Dart</span>
                         <span>Firebase</span>
-                        <span>REST API</span>
                       </div>
                     </div>
                   </div>

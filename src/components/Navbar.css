@@ -16,6 +16,7 @@
 }
 
 /* ===== NAVBAR STYLING ===== */
+/* ===== NAVBAR STYLING ===== */
 .navbar {
   background: var(--dark-bg);
   padding: 1.2rem 2rem;
@@ -24,8 +25,20 @@
   top: 0;
   z-index: 1000;
   backdrop-filter: blur(10px);
-  background-color: rgba(15, 23, 42, 0.9);
+  /* background: linear-gradient(135deg,#3a6fff  0%, #1a1a2e 50%,  #3bd427 100%); */
+  background-color: black;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  left: 0;
+  right: 0;
+  transition: all 0.3s ease;
+}
+
+/* Optional: Add a scrolled state effect (adds more shadow when scrolled) */
+.navbar.scrolled {
+  padding: 0.8rem 2rem;
+  background-color: rgba(15, 23, 42, 0.98);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .nav-container {
@@ -116,6 +129,7 @@
 
 .nav-menu li a:hover {
   color: var(--primary);
+  font-size: 18px;
 }
 
 .nav-menu li a.active {
